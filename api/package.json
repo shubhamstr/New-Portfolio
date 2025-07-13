@@ -1,0 +1,66 @@
+{
+  "name": "@new-portfolio/api",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "defaultConfiguration": "production",
+        "options": {
+          "platform": "node",
+          "outputPath": "api/dist",
+          "format": [
+            "cjs"
+          ],
+          "bundle": false,
+          "main": "api/src/main.ts",
+          "tsConfig": "api/tsconfig.app.json",
+          "assets": [
+            "api/src/assets"
+          ],
+          "esbuildOptions": {
+            "sourcemap": true,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        },
+        "configurations": {
+          "development": {},
+          "production": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }
+          }
+        }
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@new-portfolio/api:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@new-portfolio/api:build:development"
+          },
+          "production": {
+            "buildTarget": "@new-portfolio/api:build:production"
+          }
+        }
+      }
+    }
+  }
+}
