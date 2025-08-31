@@ -1,48 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/accessible-emoji */
+import { useEffect } from "react";
+import { useApi } from "../hooks/useApi";
 
 const OtherProjects = () => {
-  const projects = [
-    {
-      title: "Restaurant Website",
-      description:
-        "A responsive restaurant website with online reservation system, menu display, and customer review management.",
-      image:
-        "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      tech: ["HTML/CSS", "JavaScript", "PHP"],
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      title: "Portfolio Dashboard",
-      description:
-        "A dynamic portfolio dashboard for showcasing projects, skills, and achievements with admin panel for content management.",
-      image:
-        "https://images.unsplash.com/photo-1581091870636-66c8a9b8fa03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      tech: ["React.js", "Laravel", "MySQL"],
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      title: "Blog Platform",
-      description:
-        "A modern blog platform with content management system, SEO optimization, and social media integration.",
-      image:
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      tech: ["WordPress", "PHP", "JavaScript"],
-      liveLink: "#",
-      codeLink: "#",
-    },
-    {
-      title: "Weather App",
-      description:
-        "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      image:
-        "https://images.unsplash.com/photo-1501973801540-537f08ccae7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      tech: ["React.js", "Weather API", "Chart.js"],
-      liveLink: "#",
-      codeLink: "#",
-    },
-  ];
+  const { data: projectsData, loading: projectsLoading, callApi: getProjects }: any = useApi();
+  const { data: urlData, callApi: getURLs }: any = useApi();
+
+  useEffect(() => {
+    getURLs({
+      url: "/get/URLs",
+      method: "GET",
+    });
+    getProjects({
+      url: "/get/projects",
+      method: "GET",
+    });
+  }, []);
 
   return (
     <section className="py-16 bg-white" id="other-projects">
@@ -53,10 +28,10 @@ const OtherProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
-          {projects.map((project) => (
+          {!projectsLoading && projectsData.map((project: any) => (
             <div
               key={project.title}
-              className="bg-white shadow-md rounded-2xl overflow-hidden text-left border"
+              className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border ${project.featured ? "hidden" : ""}`}
             >
               <img
                 src={project.image}
@@ -73,7 +48,7 @@ const OtherProjects = () => {
 
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tech.map((t) => (
+                  {project.techStacks && project.techStacks.map((t: any) => (
                     <span
                       key={t}
                       className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
@@ -86,7 +61,7 @@ const OtherProjects = () => {
                 {/* Buttons */}
                 <div className="flex gap-4 text-sm">
                   <a
-                    href={project.liveLink}
+                    href={project.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-blue-600 hover:underline"
@@ -94,7 +69,7 @@ const OtherProjects = () => {
                     🔗 Live
                   </a>
                   <a
-                    href={project.codeLink}
+                    href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 text-gray-700 hover:underline"
@@ -111,7 +86,7 @@ const OtherProjects = () => {
         <div className="mt-12">
           <p className="text-gray-600 mb-4">Want to see more of my work?</p>
           <a
-            href="https://github.com/shubhamstr"
+            href={urlData?.githubURL || '/'}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white border border-purple-600 text-purple-600 rounded-lg shadow hover:bg-purple-600 hover:text-white transition"
