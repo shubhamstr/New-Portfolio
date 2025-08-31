@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nx serve web",
-    "api": "nx serve api",
+    "api": "nx serve api --configuration=development",
     "build": "nx build web",
     "test": "nx test web"
   },
@@ -70,6 +70,7 @@
     "@fortawesome/fontawesome-free": "^7.0.0",
     "axios": "^1.11.0",
     "express": "^4.21.2",
+    "node-json-db": "^2.3.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router-dom": "6.29.0"
