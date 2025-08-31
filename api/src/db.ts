@@ -1,7 +1,10 @@
 const { JsonDB, Config } = require('node-json-db')
+const path = require('path');
+
+const dbPath = path.join(__dirname, 'db.json');
 
 // true = save on push, false = pretty print
-const db = new JsonDB(new Config('db', true, false, '/'))
+const db = new JsonDB(new Config(dbPath, true, true, '/'))
 
 // // CREATE
 // db.push('/users[]', { id: 1, name: 'Shubham' })
