@@ -32,8 +32,8 @@ jobs:
       # 4️⃣ Build frontend and backend
       - name: Build apps
         run: |
-          npx nx build web --configuration=production
-          npx nx build api --configuration=production
+          npx nx build web --configuration=production --skip-nx-cache
+          npx nx build api --configuration=production --skip-nx-cache
         env:
           NX_SKIP_NX_CLOUD: true
 
