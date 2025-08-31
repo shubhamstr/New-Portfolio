@@ -36,11 +36,16 @@ jobs:
           npx nx build api --configuration=production --skip-nx-cache
         env:
           NX_SKIP_NX_CLOUD: true
-      - name: List build output
-        run: |
-          ls
-          ls web
-          ls api
+      - name: List main folder
+        run: ls
+      - name: List web folder
+        run: ls web
+      - name: List web dist folder
+        run: ls web/dist
+      - name: List api folder
+        run: ls api
+      - name: List api dist folder
+        run: ls api/dist
 
       # 5️⃣ Copy files to EC2
       - name: Deploy to EC2
