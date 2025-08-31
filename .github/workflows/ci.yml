@@ -1,9 +1,9 @@
 name: Deploy to AWS EC2
 
 on:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   # pull_request:
 
 # permissions:
@@ -39,36 +39,36 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: |
-            dist/apps/web/*
-            dist/apps/api/*
+            web/dist/*
+            api/dist/*
           target: /tmp/deploy
 
       # 6️⃣ SSH into EC2 and move files
       - name: SSH and deploy
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Create directories if not exist
-            sudo mkdir -p /var/www/web
-            sudo mkdir -p /var/www/api
+            sudo mkdir -p /var/www/html/portfolio-2025/web
+            sudo mkdir -p /var/www/html/portfolio-2025/api
 
             # Copy frontend build
-            sudo rm -rf /var/www/web/*
-            sudo cp -r /tmp/deploy/apps/web/* /var/www/web/
+            sudo rm -rf /var/www/html/portfolio-2025/web/*
+            sudo cp -r /tmp/deploy/web/dist/* /var/www/html/portfolio-2025/web/
 
             # Copy backend build
-            sudo rm -rf /var/www/api/*
-            sudo cp -r /tmp/deploy/apps/api/* /var/www/api/
+            sudo rm -rf /var/www/html/portfolio-2025/api/*
+            sudo cp -r /tmp/deploy/api/dist/* /var/www/html/portfolio-2025/api/
 
             # Restart backend
-            pm2 restart api || pm2 start /var/www/api/main.js --name api
+            pm2 restart api || pm2 start /var/www/html/portfolio-2025/api/main.js --name api
 
             # Clean up temp
             rm -rf /tmp/deploy
