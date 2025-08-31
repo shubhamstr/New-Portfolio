@@ -5,10 +5,10 @@ import { useEffect } from "react";
 import { useApi } from "../hooks/useApi";
 
 const Skills = () => {
-  const { data: fSkills, loading: fLoading, callApi: getFSkills } = useApi<any>();
-  const { data: bSkills, loading: bLoading, callApi: getBSkills } = useApi<any>();
-  const { data: dSkills, loading: dLoading, callApi: getDSkills } = useApi<any>();
-  const { data: oSkills, loading: oLoading, callApi: getOSkills } = useApi<any>();
+  const { data: fData, loading: fLoading, error: fError, callApi: getFSkills } = useApi();
+  const { data: bData, loading: bLoading, error: bError, callApi: getBSkills } = useApi();
+  const { data: dData, loading: dLoading, error: dError, callApi: getDSkills } = useApi();
+  const { data: oData, loading: oLoading, error: oError, callApi: getOSkills } = useApi();
 
   useEffect(() => {
     getFSkills({
@@ -47,7 +47,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-blue-600">💻</span> Frontend Development
             </h3>
-            {!fLoading && !fSkills?.error && fSkills?.data.map((skill: any) => (
+            {!fLoading && !fError && fData.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -69,7 +69,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-green-600">⚙️</span> Backend Development
             </h3>
-            {!bLoading && !bSkills?.error && bSkills?.data.map((skill: any) => (
+            {!bLoading && !bError && bData.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -91,7 +91,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-purple-600">🗄️</span> Database & Tools
             </h3>
-            {!dLoading && !dSkills?.error && dSkills?.data.map((skill: any) => (
+            {!dLoading && !dError && dData.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -113,7 +113,7 @@ const Skills = () => {
         <div className="mt-12">
           <h3 className="text-xl font-semibold mb-6">Other Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {!oLoading && !oSkills?.error && oSkills?.data.map((tech: any) => (
+            {!oLoading && !oError && oData.map((tech: any) => (
               <span
                 key={tech}
                 className="px-4 py-2 bg-white shadow rounded-full text-gray-700 text-sm"
