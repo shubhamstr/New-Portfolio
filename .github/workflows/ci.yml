@@ -54,9 +54,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: |
-            web/dist/*
-            api/dist/*
+          source: "web/dist/*,api/dist/*"
           target: /tmp/deploy
 
       # 6️⃣ SSH into EC2 and move files
