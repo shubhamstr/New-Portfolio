@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
+import OtherProjects from '../components/OtherProjects';
 
 
 export function App() {
@@ -12,6 +13,7 @@ export function App() {
       <Hero />
       <Skills />
       <Projects />
+      <OtherProjects />
       {/* <div role="navigation">
         <ul>
           <li>
