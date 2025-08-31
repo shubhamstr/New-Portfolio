@@ -1,6 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/accessible-emoji */
+import { useState } from "react";
+import { useApi } from "../hooks/useApi";
 
 const Contact = () => {
+  const { loading: contactsLoading, callApi: createContact }: any = useApi();
+  const [formData, setFormData] = useState<any>({})
+
+  const handleChange = ({ target }: any) => {
+    setFormData((prev: any) => ({
+      ...prev,
+      [target.name]: target.value
+    }))
+  }
+
+  const handleSave = async (e: any) => {
+    e.preventDefault();
+    await createContact({
+      url: "/create/contact",
+      method: "POST",
+      data: formData
+    });
+    setFormData({})
+  }
   return (
     <section className="py-16 bg-gray-50" id="contact">
       <div className="max-w-6xl mx-auto px-6">
@@ -33,10 +55,10 @@ const Contact = () => {
                 </span>
                 <div>
                   <p className="text-sm text-gray-500">Email</p>
-                  <p className="text-gray-700">shubham.sutar@email.com</p>
+                  <p className="text-gray-700">shubhamsutar5799@gmail.com</p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 bg-white p-4 shadow rounded-xl">
+              <div className="hidden flex items-center gap-4 bg-white p-4 shadow rounded-xl">
                 <span className="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
                   📞
                 </span>
@@ -57,7 +79,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="mt-6">
+            <div className="hidden mt-6">
               <h4 className="text-sm font-semibold mb-3">Follow Me</h4>
               <div className="flex gap-4">
                 <a
@@ -88,32 +110,44 @@ const Contact = () => {
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
+                  onChange={handleChange}
+                  name="fullName"
+                  value={formData?.fullName || ''}
                   type="text"
                   placeholder="Your full name"
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
                 />
                 <input
+                  onChange={handleChange}
+                  name="email"
+                  value={formData?.email || ''}
                   type="email"
                   placeholder="your.email@example.com"
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
                 />
               </div>
               <input
+                onChange={handleChange}
+                name="subject"
+                value={formData?.subject || ''}
                 type="text"
                 placeholder="What's this about?"
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
               />
               <textarea
+                onChange={handleChange}
+                value={formData?.message || ''}
+                name="message"
                 placeholder="Tell me about your project or how I can help you..."
                 rows={5}
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
               ></textarea>
 
               <button
-                type="submit"
+                onClick={handleSave}
                 className="w-full bg-purple-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-purple-700 transition"
               >
-                🚀 Send Message
+                {contactsLoading ? "loading..." : "🚀 Send Message"}
               </button>
             </form>
           </div>

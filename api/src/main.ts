@@ -53,11 +53,21 @@ app.get('/get/:type', async (req: any, res: any) => {
   }
 });
 
-// app.get('/create', async (req: any, res: any) => {
-//   const users = await db.push('/users[]', { id: 1, name: 'Shubham' })
-//   console.log(users)
-//   res.send(users);
-// });
+app.post('/create/:type', async (req: any, res: any) => {
+  try {
+    const type = req.params.type || '';
+    if (!type) {
+      return res.json({ error: true, message: 'Type is required' });
+    }
+    if (type === 'contact') {
+      await db.push('/contacts[]', req.body)
+    }
+    res.json({ error: false, message: 'Data created successfully' });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: true, message: 'Internal Server Error' });
+  }
+});
 
 // app.get('/skills', async (req: any, res) => {
 
