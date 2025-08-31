@@ -54,7 +54,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: 'web/dist/*,api/dist/*,package.json'
+          source: 'web/dist/*,api/dist/*,node_modules'
           target: /tmp/deploy
 
       # 6️⃣ SSH into EC2 and move files
@@ -76,12 +76,7 @@ jobs:
             # Copy backend build
             sudo rm -rf /var/www/html/portfolio-2025/api/*
             sudo cp -r /tmp/deploy/api/dist/* /var/www/html/portfolio-2025/api/
-            # Copy backend package.json
-            sudo cp /tmp/deploy/package.json /var/www/html/portfolio-2025/api/
-
-            # Install backend dependencies
-            cd /var/www/html/portfolio-2025/api/
-            sudo npm install --omit=dev
+            sudo cp /tmp/deploy/node_modules /var/www/html/portfolio-2025/api/
 
             # Restart backend
             pm2 restart api || pm2 start /var/www/html/portfolio-2025/api/main.js --name api
