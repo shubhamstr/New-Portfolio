@@ -6,7 +6,6 @@ import { useApi } from "../hooks/useApi";
 
 const Skills = () => {
   const { data: skillsData, loading: skillsLoading, callApi: getSkills }: any = useApi();
-  console.log(skillsLoading)
 
   useEffect(() => {
     getSkills({

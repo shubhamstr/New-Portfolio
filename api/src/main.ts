@@ -38,6 +38,8 @@ app.get('/get/:type', async (req: any, res: any) => {
       data = await db.getData('/skills');
     } else if (type === 'URLs') {
       data = await db.getData('/URLs');
+    } else if (type === 'projects') {
+      data = await db.getData('/projects');
     } else if (type === 'all') {
       data = await db.getData('/');
     } else {

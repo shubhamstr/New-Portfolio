@@ -142,5 +142,79 @@
     "linkedInURL": "https://www.linkedin.com/in/shubhamstr",
     "twitterURL": "https://x.com/shubhamstr_",
     "codepenURL": "https://codepen.io/shubhamstr"
-  }
+  },
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce solution built with React.js, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": [
+        "React.js",
+        "Node.js"
+      ],
+      "demoLink": "",
+      "githubLink": "",
+      "featured": true
+    },
+    {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": [
+        "React.js",
+        "PHP"
+      ],
+      "demoLink": "",
+      "githubLink": "",
+      "featured": true
+    },
+    {
+      "title": "Restaurant Website",
+      "description": "A responsive restaurant website with online reservation system, menu display, and customer review management.",
+      "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": [
+        "React.js",
+        "PHP"
+      ],
+      "demoLink": "",
+      "githubLink": "",
+      "featured": false
+    },
+    {
+      "title": "Portfolio Dashboard",
+      "description": "A dynamic portfolio dashboard for showcasing projects, skills, and achievements with admin panel for content management.",
+      "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": [
+        "React.js",
+        "PHP"
+      ],
+      "demoLink": "",
+      "githubLink": "",
+      "featured": false
+    },
+    {
+      "title": "Blog Platform",
+      "description": "A modern blog platform with content management system, SEO optimization, and social media integration.",
+      "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": [
+        "React.js",
+        "PHP"
+      ],
+      "demoLink": "",
+      "githubLink": "",
+      "featured": false
+    },
+    {
+      "title": "Weather App",
+      "description": "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
+      "image": "https://images.unsplash.com/photo-1501973801540-537f08ccae7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": [
+        "React.js",
+        "PHP"
+      ],
+      "demoLink": "",
+      "githubLink": "",
+      "featured": false
+    }
+  ]
 }
