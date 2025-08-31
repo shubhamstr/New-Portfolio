@@ -88,3 +88,15 @@ And join the Nx community:
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
 - [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+
+sudo lsof -i -P -n | grep LISTEN
+
+cd /etc/apache2/sites-available
+
+sudo nano codeguest.in.conf
+
+pm2 list
+
+pm2 logs --lines 200
+
