@@ -5,7 +5,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import OtherProjects from '../components/OtherProjects';
 import Contact from '../components/Contact';
-
+import Footer from '../components/Footer';
 
 export function App() {
   return (
@@ -16,6 +16,7 @@ export function App() {
       <Projects />
       <OtherProjects />
       <Contact />
+      <Footer />
       {/* <div role="navigation">
         <ul>
           <li>
