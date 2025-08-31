@@ -31,26 +31,23 @@ app.get('/get/:type', async (req: any, res: any) => {
   try {
     const type = req.params.type || '';
     if (!type) {
-      return res.json({ error: true, message: 'Type is required', data: null });
+      return res.json({ error: true, message: 'Type is required' });
     }
     let data = null;
-    if (type === 'frontendSkills') {
-      data = await db.getData('/frontendSkills');
-    } else if (type === 'backendSkills') {
-      data = await db.getData('/backendSkills');
-    } else if (type === 'databaseSkills') {
-      data = await db.getData('/databaseSkills');
-    } else if (type === 'otherSkills') {
-      data = await db.getData('/otherSkills');
-    } else if (type === 'allSkills') {
+    if (type === 'skills') {
+      data = await db.getData('/skills');
+    } else if (type === 'URLs') {
+      data = await db.getData('/URLs');
+    } else if (type === 'all') {
       data = await db.getData('/');
     } else {
-      return res.json({ error: true, message: 'Invalid type', data: null });
+      return res.json({ error: true, message: 'Invalid type' });
     }
-    console.log(data)
+    // console.log(data)
     res.json({ error: false, message: 'Data fetched successfully', data });
   } catch (error) {
-    res.status(500).json({ error: true, message: 'Internal Server Error', data: error });
+    console.log(error)
+    res.status(500).json({ error: true, message: 'Internal Server Error' });
   }
 });
 

@@ -1,5 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from "react";
+import { useApi } from "../hooks/useApi";
 import hero_img from '../assets/hero_img.png'
+
 const Hero = () => {
+  const { data: urlData, callApi: getURLs }: any = useApi();
+
+  useEffect(() => {
+    getURLs({
+      url: "/get/URLs",
+      method: "GET",
+    });
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-white to-purple-50 overflow-hidden" id='home'>
       {/* Background gradient blur */}
@@ -25,7 +38,7 @@ const Hero = () => {
           {/* Buttons */}
           <div className="mt-6 flex space-x-4">
             <a
-              href="https://codeguest.in/portfolio/assets/files/Shubham%20Sutar.pdf"
+              href={urlData?.resumeURL || '/'}
               className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition"
               target='_blank' rel="noreferrer"
             >
@@ -59,16 +72,16 @@ const Hero = () => {
 
           {/* Social icons */}
           <div className="mt-8 flex space-x-4">
-            <a href="/" className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md">
+            <a href={urlData?.githubURL || '/'} className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md" target='_blank' rel="noreferrer">
               <i className="fa-brands fa-github text-gray-700"></i>
             </a>
-            <a href="/" className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md">
+            <a href={urlData?.linkedInURL || '/'} className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md" target='_blank' rel="noreferrer">
               <i className="fa-brands fa-linkedin text-blue-600"></i>
             </a>
-            <a href="/" className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md">
+            <a href={urlData?.twitterURL || '/'} className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md" target='_blank' rel="noreferrer">
               <i className="fa-brands fa-twitter text-sky-500"></i>
             </a>
-            <a href="/" className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md">
+            <a href={urlData?.codepenURL || '/'} className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md" target='_blank' rel="noreferrer">
               <i className="fa-solid fa-code text-purple-600"></i>
             </a>
           </div>

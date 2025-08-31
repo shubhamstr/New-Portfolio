@@ -3,14 +3,13 @@ import { useState, useCallback } from "react";
 import api from "../utils/api";
 
 export function useApi() {
-  const [state, setState] = useState({
+  const [state, setState] = useState<any>({
     data: [],
-    error: false,
-    loading: false,
+    loading: true,
   });
 
   const callApi = useCallback(async (args: any): Promise<any> => {
-    setState((prev: any) => ({ ...prev, loading: true, error: false }));
+    setState((prev: any) => ({ ...prev, loading: true }));
 
     try {
       const response = await api.request({
@@ -21,13 +20,14 @@ export function useApi() {
         headers: args.headers,
       });
       if (response.data.error) {
-        setState({ data: [], error: true, loading: false });
+        setState({ data: [] });
       } else {
-        setState({ data: response.data.data, error: false, loading: false });
+        setState({ data: response.data.data, loading: false });
       }
       return response;
     } catch (error: any) {
-      setState({ data: [], error: error.message, loading: false });
+      console.log(error.message)
+      setState({ data: [], loading: false });
       return null;
     }
   }, []);

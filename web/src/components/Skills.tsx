@@ -5,26 +5,12 @@ import { useEffect } from "react";
 import { useApi } from "../hooks/useApi";
 
 const Skills = () => {
-  const { data: fData, loading: fLoading, error: fError, callApi: getFSkills } = useApi();
-  const { data: bData, loading: bLoading, error: bError, callApi: getBSkills } = useApi();
-  const { data: dData, loading: dLoading, error: dError, callApi: getDSkills } = useApi();
-  const { data: oData, loading: oLoading, error: oError, callApi: getOSkills } = useApi();
+  const { data: skillsData, loading: skillsLoading, callApi: getSkills }: any = useApi();
+  console.log(skillsLoading)
 
   useEffect(() => {
-    getFSkills({
-      url: "/get/frontendSkills",
-      method: "GET",
-    });
-    getBSkills({
-      url: "/get/backendSkills",
-      method: "GET",
-    });
-    getDSkills({
-      url: "/get/databaseSkills",
-      method: "GET",
-    });
-    getOSkills({
-      url: "/get/otherSkills",
+    getSkills({
+      url: "/get/skills",
       method: "GET",
     });
   }, []);
@@ -47,7 +33,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-blue-600">💻</span> Frontend Development
             </h3>
-            {!fLoading && !fError && fData.map((skill: any) => (
+            {!skillsLoading && skillsData.frontend.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -61,7 +47,6 @@ const Skills = () => {
                 </div>
               </div>
             ))}
-            {fLoading && <p className="text-center">Loading...</p>}
           </div>
 
           {/* Backend */}
@@ -69,7 +54,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-green-600">⚙️</span> Backend Development
             </h3>
-            {!bLoading && !bError && bData.map((skill: any) => (
+            {!skillsLoading && skillsData.backend.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -83,7 +68,6 @@ const Skills = () => {
                 </div>
               </div>
             ))}
-            {bLoading && <p className="text-center">Loading...</p>}
           </div>
 
           {/* Database & Tools */}
@@ -91,7 +75,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-purple-600">🗄️</span> Database & Tools
             </h3>
-            {!dLoading && !dError && dData.map((skill: any) => (
+            {!skillsLoading && skillsData.database.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -105,7 +89,6 @@ const Skills = () => {
                 </div>
               </div>
             ))}
-            {dLoading && <p className="text-center">Loading...</p>}
           </div>
         </div>
 
@@ -113,7 +96,7 @@ const Skills = () => {
         <div className="mt-12">
           <h3 className="text-xl font-semibold mb-6">Other Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {!oLoading && !oError && oData.map((tech: any) => (
+            {!skillsLoading && skillsData.other.map((tech: any) => (
               <span
                 key={tech}
                 className="px-4 py-2 bg-white shadow rounded-full text-gray-700 text-sm"
@@ -121,7 +104,6 @@ const Skills = () => {
                 {tech}
               </span>
             ))}
-            {oLoading && <p className="text-center">Loading...</p>}
           </div>
         </div>
       </div>
