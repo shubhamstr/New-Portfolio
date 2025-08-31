@@ -2,7 +2,7 @@
 const express = require('express')
 const db = require('./db')
 
-const host = process.env.HOST ?? 'localhost';
+// const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 const app: any = express();
@@ -79,6 +79,10 @@ app.post('/create/:type', async (req: any, res: any) => {
 //   res.send(skills);
 // });
 
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://${host}:${port}`);
+// app.listen(port, host, () => {
+//   console.log(`[ ready ] http://${host}:${port}`);
+// });
+
+app.listen(port, () => {
+  console.log(`Server is running on the Port: ${port}`);
 });
