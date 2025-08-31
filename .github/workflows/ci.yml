@@ -81,7 +81,7 @@ jobs:
 
             # Install backend dependencies
             cd /var/www/html/portfolio-2025/api/
-            npm install --production
+            sudo npm install --production
 
             # Restart backend
             pm2 restart api || pm2 start /var/www/html/portfolio-2025/api/main.js --name api
