@@ -37,7 +37,10 @@ jobs:
         env:
           NX_SKIP_NX_CLOUD: true
       - name: List build output
-        run: ls
+        run: |
+          ls
+          ls web
+          ls api
 
       # 5️⃣ Copy files to EC2
       - name: Deploy to EC2
