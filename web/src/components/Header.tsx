@@ -4,9 +4,12 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
 
         {/* Logo / Brand */}
-        <a href="/" className="text-2xl font-bold text-primary-500">
-          Shubham Sutar
-        </a>
+        <div className="flex items-center space-x-3 mb-3">
+          <div className="bg-gradient-to-r from-purple-500 to-indigo-500 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">
+            SS
+          </div>
+          <h2 className="text-2xl font-bold text-primary-500">Shubham Sutar</h2>
+        </div>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6 text-secondary-500 font-medium">
