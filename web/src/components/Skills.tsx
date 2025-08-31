@@ -1,47 +1,33 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/accessible-emoji */
+import { useEffect } from "react";
+import { useApi } from "../hooks/useApi";
 
 const Skills = () => {
-  const skills = {
-    frontend: [
-      { name: "React.js", level: 85, visible: true },
-      { name: "JavaScript", level: 80, visible: true },
-      { name: "Tailwind CSS", level: 80, visible: true },
-      { name: "HTML/CSS", level: 90, visible: true },
-      { name: "Bootstrap", level: 90, visible: true },
-      { name: "jQuery", level: 80, visible: false },
-      { name: "React Native", level: 70, visible: true },
-      { name: "Angular", level: 40, visible: false },
-    ],
-    backend: [
-      { name: "Node.js", level: 75, visible: true },
-      { name: "Express.js", level: 90, visible: true },
-      { name: "PHP", level: 80, visible: true },
-      { name: "Laravel", level: 70, visible: false },
-      { name: "CodeIgniter", level: 50, visible: false },
-      { name: "Python", level: 40, visible: true },
-      { name: "SQL", level: 80, visible: true },
-      { name: "NoSQL", level: 70, visible: true },
-    ],
-    database: [
-      { name: "MySQL", level: 80, visible: true },
-      { name: "MongoDB", level: 70, visible: true },
-      { name: "Jira", level: 90, visible: true },
-      { name: "Docker", level: 65, visible: true },
-      { name: "Git", level: 90, visible: true },
-      { name: "GitHub", level: 90, visible: true },
-      { name: "BitBucket", level: 90, visible: true },
-      { name: "GitLab", level: 90, visible: false },
-    ],
-    others: [
-      "AWS",
-      "npm",
-      "yarn",
-      "composer",
-      "FileZilla",
-      "MongoDB Compass",
-      "PHPMyAdmin",
-    ],
-  };
+  const { data: fSkills, loading: fLoading, callApi: getFSkills } = useApi<any>();
+  const { data: bSkills, loading: bLoading, callApi: getBSkills } = useApi<any>();
+  const { data: dSkills, loading: dLoading, callApi: getDSkills } = useApi<any>();
+  const { data: oSkills, loading: oLoading, callApi: getOSkills } = useApi<any>();
+
+  useEffect(() => {
+    getFSkills({
+      url: "/get/frontendSkills",
+      method: "GET",
+    });
+    getBSkills({
+      url: "/get/backendSkills",
+      method: "GET",
+    });
+    getDSkills({
+      url: "/get/databaseSkills",
+      method: "GET",
+    });
+    getOSkills({
+      url: "/get/otherSkills",
+      method: "GET",
+    });
+  }, []);
 
   return (
     <section className="py-16 bg-gray-50" id="skills">
@@ -61,7 +47,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-blue-600">💻</span> Frontend Development
             </h3>
-            {skills.frontend.map((skill) => (
+            {!fLoading && !fSkills?.error && fSkills?.data.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -75,6 +61,7 @@ const Skills = () => {
                 </div>
               </div>
             ))}
+            {fLoading && <p className="text-center">Loading...</p>}
           </div>
 
           {/* Backend */}
@@ -82,7 +69,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-green-600">⚙️</span> Backend Development
             </h3>
-            {skills.backend.map((skill) => (
+            {!bLoading && !bSkills?.error && bSkills?.data.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -96,6 +83,7 @@ const Skills = () => {
                 </div>
               </div>
             ))}
+            {bLoading && <p className="text-center">Loading...</p>}
           </div>
 
           {/* Database & Tools */}
@@ -103,7 +91,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-purple-600">🗄️</span> Database & Tools
             </h3>
-            {skills.database.map((skill) => (
+            {!dLoading && !dSkills?.error && dSkills?.data.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -117,6 +105,7 @@ const Skills = () => {
                 </div>
               </div>
             ))}
+            {dLoading && <p className="text-center">Loading...</p>}
           </div>
         </div>
 
@@ -124,7 +113,7 @@ const Skills = () => {
         <div className="mt-12">
           <h3 className="text-xl font-semibold mb-6">Other Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {skills.others.map((tech) => (
+            {!oLoading && !oSkills?.error && oSkills?.data.map((tech: any) => (
               <span
                 key={tech}
                 className="px-4 py-2 bg-white shadow rounded-full text-gray-700 text-sm"
@@ -132,6 +121,7 @@ const Skills = () => {
                 {tech}
               </span>
             ))}
+            {oLoading && <p className="text-center">Loading...</p>}
           </div>
         </div>
       </div>

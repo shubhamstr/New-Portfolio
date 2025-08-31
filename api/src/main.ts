@@ -50,7 +50,7 @@ app.get('/get/:type', async (req: any, res: any) => {
     console.log(data)
     res.json({ error: false, message: 'Data fetched successfully', data });
   } catch (error) {
-    res.json({ error: true, message: 'Internal Server Error', data: error });
+    res.status(500).json({ error: true, message: 'Internal Server Error', data: error });
   }
 });
 
