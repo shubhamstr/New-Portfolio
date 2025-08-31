@@ -111,7 +111,7 @@ const OtherProjects = () => {
         <div className="mt-12">
           <p className="text-gray-600 mb-4">Want to see more of my work?</p>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/shubhamstr"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white border border-purple-600 text-purple-600 rounded-lg shadow hover:bg-purple-600 hover:text-white transition"

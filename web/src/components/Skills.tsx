@@ -3,33 +3,43 @@
 const Skills = () => {
   const skills = {
     frontend: [
-      { name: "JavaScript", level: 90 },
-      { name: "React.js", level: 85 },
-      { name: "HTML/CSS", level: 95 },
-      { name: "Bootstrap", level: 88 },
-      { name: "Tailwind CSS", level: 80 },
+      { name: "React.js", level: 85, visible: true },
+      { name: "JavaScript", level: 80, visible: true },
+      { name: "Tailwind CSS", level: 80, visible: true },
+      { name: "HTML/CSS", level: 90, visible: true },
+      { name: "Bootstrap", level: 90, visible: true },
+      { name: "jQuery", level: 80, visible: false },
+      { name: "React Native", level: 70, visible: true },
+      { name: "Angular", level: 40, visible: false },
     ],
     backend: [
-      { name: "PHP", level: 85 },
-      { name: "Node.js", level: 75 },
-      { name: "Python", level: 70 },
-      { name: "API Development", level: 80 },
+      { name: "Node.js", level: 75, visible: true },
+      { name: "Express.js", level: 90, visible: true },
+      { name: "PHP", level: 80, visible: true },
+      { name: "Laravel", level: 70, visible: false },
+      { name: "CodeIgniter", level: 50, visible: false },
+      { name: "Python", level: 40, visible: true },
+      { name: "SQL", level: 80, visible: true },
+      { name: "NoSQL", level: 70, visible: true },
     ],
     database: [
-      { name: "MySQL", level: 85 },
-      { name: "MongoDB", level: 75 },
-      { name: "Git/GitHub", level: 90 },
-      { name: "Docker", level: 65 },
+      { name: "MySQL", level: 80, visible: true },
+      { name: "MongoDB", level: 70, visible: true },
+      { name: "Jira", level: 90, visible: true },
+      { name: "Docker", level: 65, visible: true },
+      { name: "Git", level: 90, visible: true },
+      { name: "GitHub", level: 90, visible: true },
+      { name: "BitBucket", level: 90, visible: true },
+      { name: "GitLab", level: 90, visible: false },
     ],
     others: [
-      "WordPress",
-      "Laravel",
-      "Express.js",
-      "Firebase",
       "AWS",
-      "Figma",
-      "Adobe XD",
-      "Photoshop",
+      "npm",
+      "yarn",
+      "composer",
+      "FileZilla",
+      "MongoDB Compass",
+      "PHPMyAdmin",
     ],
   };
 
@@ -52,7 +62,7 @@ const Skills = () => {
               <span className="text-blue-600">💻</span> Frontend Development
             </h3>
             {skills.frontend.map((skill) => (
-              <div key={skill.name} className="mb-4">
+              <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
                   <span className="text-gray-600 text-sm">{skill.level}%</span>
@@ -73,7 +83,7 @@ const Skills = () => {
               <span className="text-green-600">⚙️</span> Backend Development
             </h3>
             {skills.backend.map((skill) => (
-              <div key={skill.name} className="mb-4">
+              <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
                   <span className="text-gray-600 text-sm">{skill.level}%</span>
@@ -94,7 +104,7 @@ const Skills = () => {
               <span className="text-purple-600">🗄️</span> Database & Tools
             </h3>
             {skills.database.map((skill) => (
-              <div key={skill.name} className="mb-4">
+              <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
                   <span className="text-gray-600 text-sm">{skill.level}%</span>

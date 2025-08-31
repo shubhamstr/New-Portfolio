@@ -18,25 +18,35 @@ const Hero = () => {
           <h2 className="mt-4 text-xl text-gray-600">Full Stack Web Developer</h2>
           <p className="mt-4 text-gray-500 max-w-lg">
             I create beautiful, responsive websites using modern technologies like
-            JavaScript, PHP, React.js, and Bootstrap. Based in Pune, India, I'm
+            JavaScript, PHP, React.js, and Tailwind. Based in Pune, India, I'm
             passionate about bringing digital ideas to life.
           </p>
 
           {/* Buttons */}
           <div className="mt-6 flex space-x-4">
             <a
-              href="#resume"
+              href="https://codeguest.in/portfolio/assets/files/Shubham%20Sutar.pdf"
               className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition"
+              target='_blank' rel="noreferrer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5"
-                fill="none"
                 viewBox="0 0 24 24"
+                fill="none"
                 stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                {/* Arrow down */}
+                <path d="M12 4v8" />
+                <path d="M8 10l4 4 4-4" />
+                {/* Tray line */}
+                <path d="M4 20h16" />
               </svg>
+
               View Resume
             </a>
             <a
