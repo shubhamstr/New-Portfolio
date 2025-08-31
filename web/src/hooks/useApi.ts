@@ -5,7 +5,7 @@ import api from "../utils/api";
 export function useApi() {
   const [state, setState] = useState<any>({
     data: [],
-    loading: true,
+    loading: false,
   });
 
   const callApi = useCallback(async (args: any): Promise<any> => {

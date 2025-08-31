@@ -32,7 +32,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-blue-600">💻</span> Frontend Development
             </h3>
-            {!skillsLoading && skillsData.frontend.map((skill: any) => (
+            {!skillsLoading && skillsData?.frontend && skillsData.frontend.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -53,7 +53,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-green-600">⚙️</span> Backend Development
             </h3>
-            {!skillsLoading && skillsData.backend.map((skill: any) => (
+            {!skillsLoading && skillsData?.backend && skillsData.backend.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -74,7 +74,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-purple-600">🗄️</span> Database & Tools
             </h3>
-            {!skillsLoading && skillsData.database.map((skill: any) => (
+            {!skillsLoading && skillsData?.database && skillsData.database.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -95,7 +95,7 @@ const Skills = () => {
         <div className="mt-12">
           <h3 className="text-xl font-semibold mb-6">Other Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {!skillsLoading && skillsData.other.map((tech: any) => (
+            {!skillsLoading && skillsData?.other && skillsData.other.map((tech: any) => (
               <span
                 key={tech}
                 className="px-4 py-2 bg-white shadow rounded-full text-gray-700 text-sm"
