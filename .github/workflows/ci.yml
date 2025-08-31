@@ -76,7 +76,7 @@ jobs:
             # Copy backend build
             sudo rm -rf /var/www/html/portfolio-2025/api/*
             sudo cp -r /tmp/deploy/api/dist/* /var/www/html/portfolio-2025/api/
-            sudo cp /tmp/deploy/node_modules /var/www/html/portfolio-2025/api/
+            sudo cp -r /tmp/deploy/node_modules /var/www/html/portfolio-2025/api/
 
             # Restart backend
             pm2 restart api || pm2 start /var/www/html/portfolio-2025/api/main.js --name api
