@@ -1,7 +1,7 @@
 import hero_img from '../assets/hero_img.png'
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-white to-purple-50 overflow-hidden" id='home'>
       {/* Background gradient blur */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-400 opacity-30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-pink-400 opacity-20 rounded-full blur-3xl"></div>

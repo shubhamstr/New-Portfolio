@@ -14,7 +14,6 @@ const Header = () => {
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-6 text-secondary-500 font-medium">
           <a href="#home" className="hover:text-primary-500">Home</a>
-          <a href="#about" className="hover:text-primary-500">About</a>
           <a href="#skills" className="hover:text-primary-500">Skills</a>
           <a href="#projects" className="hover:text-primary-500">Projects</a>
           <a href="#contact" className="hover:text-primary-500">Contact</a>
