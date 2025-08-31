@@ -1,6 +1,7 @@
 // import { Route, Routes, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import Skills from '../components/Skills';
 
 
 export function App() {
@@ -8,6 +9,7 @@ export function App() {
     <div>
       <Header />
       <Hero />
+      <Skills />
       {/* <div role="navigation">
         <ul>
           <li>
