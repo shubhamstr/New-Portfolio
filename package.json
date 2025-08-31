@@ -67,6 +67,7 @@
     "api"
   ],
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.0",
     "express": "^4.21.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",

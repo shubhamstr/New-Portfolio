@@ -1,19 +1,14 @@
-import NxWelcome from './nx-welcome';
-
 // import { Route, Routes, Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="@new-portfolio/web" />
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      {/* <br />
-      <hr />
-      <br />
-      <div role="navigation">
+      <Header />
+      <Hero />
+      {/* <div role="navigation">
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -22,8 +17,8 @@ export function App() {
             <Link to="/page-2">Page 2</Link>
           </li>
         </ul>
-      </div>
-      <Routes>
+      </div> */}
+      {/* <Routes>
         <Route
           path="/"
           element={
