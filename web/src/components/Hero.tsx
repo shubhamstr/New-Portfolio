@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-400 opacity-30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-pink-400 opacity-20 rounded-full blur-3xl"></div>
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 grid md:grid-cols-2 items-center gap-12 relative z-10">
+      <div className="max-w-6xl container mx-auto grid md:grid-cols-2 items-center gap-12 relative z-10">
         {/* Left content */}
         <div>
           <h1 className="text-5xl font-bold leading-tight text-gray-900">
