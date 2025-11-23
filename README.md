@@ -100,3 +100,14 @@ pm2 list
 
 pm2 logs --lines 200
 
+### Web docker image build and run
+
+docker build -f Dockerfile-web -t my-web-app .
+
+docker run -d -p 8080:80 --name web-app my-web-app
+
+docker tag portfolio-web shubhamstr/portfolio-web:v1
+
+docker login
+
+docker push shubhamstr/portfolio-web:v1
