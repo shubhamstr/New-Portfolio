@@ -69,6 +69,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "axios": "^1.11.0",
+    "dotenv": "^17.2.3",
     "express": "^4.21.2",
     "node-json-db": "^2.3.1",
     "react": "19.0.0",
