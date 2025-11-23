@@ -36,3 +36,39 @@ jobs:
       - name: Push Version Tag
         run: |
           docker push ${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }}
+
+      # 5️⃣ Deploy to EC2
+      - name: Deploy to EC2 (Pull + Restart Container)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            CONTAINER_NAME="portfolio-web"
+            IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }}"
+
+            echo "Logging in to Docker..."
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login -u "${{ secrets.DOCKERHUB_USER }}" --password-stdin
+
+            echo "Pulling new Docker image..."
+            sudo docker pull $IMAGE
+
+            echo "Stopping existing container if running..."
+            if sudo docker ps -q --filter "name=$CONTAINER_NAME"; then
+              sudo docker stop $CONTAINER_NAME
+            fi
+
+            echo "Removing existing container if exists..."
+            if sudo docker ps -a -q --filter "name=$CONTAINER_NAME"; then
+              sudo docker rm $CONTAINER_NAME
+            fi
+
+            echo "Starting new container..."
+            sudo docker run -d \
+              --name $CONTAINER_NAME \
+              -p 80:80 \
+              --restart always \
+              $IMAGE
+
+            echo "Deployment completed successfully!"
