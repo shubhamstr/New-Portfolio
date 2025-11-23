@@ -2,16 +2,15 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
+# Copy only API directory
+COPY package*.json ./api/
+WORKDIR /app/api
 RUN npm install
 
-# Copy full project
-COPY . .
+# Copy full API source
+COPY api/ ./
 
-# Build TypeScript → dist
+# Build TypeScript -> dist
 RUN npm run api-build
 
 
@@ -19,15 +18,13 @@ RUN npm run api-build
 FROM node:18-alpine
 WORKDIR /app
 
-# Copy ONLY necessary files from builder
+# Copy package files and install only production deps
 COPY package*.json ./
 RUN npm install --only=production
 
-# Copy compiled code
+# Copy compiled output from builder
 COPY --from=builder /app/api/dist ./dist
 
-# Expose API port
 EXPOSE 5000
 
-# Run the API
 CMD ["node", "dist/server.js"]
