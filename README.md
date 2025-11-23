@@ -117,3 +117,6 @@ docker login
 docker push shubhamstr/portfolio-web:v1
 
 docker push shubhamstr/portfolio-api:v1
+
+
+docker exec -it portfolio-api ls
