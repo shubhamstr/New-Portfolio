@@ -7,37 +7,55 @@ on:
         description: "Docker image version (example: v1.0.0)"
         required: true
         type: string
+      type:
+        description: "Select project type (web/api)"
+        required: true
+        type: choice
+        options:
+          - web
+          - api
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Log in to Docker Hub
+      # Docker Hub Login
       - name: Docker Hub Login
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3️⃣ Build Docker image using your Dockerfile
+      # Determine Dockerfile + image name
+      - name: Set variables
+        id: vars
+        run: |
+          if [ "${{ github.event.inputs.type }}" = "web" ]; then
+            echo "DOCKERFILE=Dockerfile-web" >> $GITHUB_OUTPUT
+            echo "IMAGE_NAME=portfolio-web" >> $GITHUB_OUTPUT
+          else
+            echo "DOCKERFILE=Dockerfile-api" >> $GITHUB_OUTPUT
+            echo "IMAGE_NAME=portfolio-api" >> $GITHUB_OUTPUT
+          fi
+
+      # Build Docker Image
       - name: Build Docker Image
         run: |
           docker build \
-            -f Dockerfile-web \
-            -t ${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }} \
+            -f ${{ steps.vars.outputs.DOCKERFILE }} \
+            -t ${{ secrets.DOCKERHUB_USER }}/${{ steps.vars.outputs.IMAGE_NAME }}:${{ github.event.inputs.version }} \
             .
 
-      # 4️⃣ Push Docker image with version tag
+      # Push Docker Image
       - name: Push Version Tag
         run: |
-          docker push ${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }}
+          docker push ${{ secrets.DOCKERHUB_USER }}/${{ steps.vars.outputs.IMAGE_NAME }}:${{ github.event.inputs.version }}
 
-      # 5️⃣ Deploy to EC2
+      # Deploy to EC2
       - name: Deploy to EC2 (Pull + Restart Container)
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -45,8 +63,18 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            CONTAINER_NAME="portfolio-web"
-            IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }}"
+            TYPE="${{ github.event.inputs.type }}"
+            VERSION="${{ github.event.inputs.version }}"
+
+            if [ "$TYPE" = "web" ]; then
+              CONTAINER_NAME="portfolio-web"
+              IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-web:$VERSION"
+              PORT="-p 3000:80"
+            else
+              CONTAINER_NAME="portfolio-api"
+              IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-api:$VERSION"
+              PORT="-p 5000:5000"
+            fi
 
             echo "Logging in to Docker..."
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login -u "${{ secrets.DOCKERHUB_USER }}" --password-stdin
@@ -54,12 +82,12 @@ jobs:
             echo "Pulling new Docker image..."
             sudo docker pull $IMAGE
 
-            echo "Stopping existing container if running..."
+            echo "Stopping existing container..."
             if sudo docker ps -q --filter "name=$CONTAINER_NAME"; then
               sudo docker stop $CONTAINER_NAME
             fi
 
-            echo "Removing existing container if exists..."
+            echo "Removing old container..."
             if sudo docker ps -a -q --filter "name=$CONTAINER_NAME"; then
               sudo docker rm $CONTAINER_NAME
             fi
@@ -67,7 +95,7 @@ jobs:
             echo "Starting new container..."
             sudo docker run -d \
               --name $CONTAINER_NAME \
-              -p 3000:80 \
+              $PORT \
               --restart always \
               $IMAGE
 

@@ -1,0 +1,33 @@
+# ---------- Stage 1: Build (TypeScript) ----------
+FROM node:18-alpine AS builder
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy full project
+COPY . .
+
+# Build TypeScript → dist
+RUN npm run api-build
+
+
+# ---------- Stage 2: Production ----------
+FROM node:18-alpine
+WORKDIR /app
+
+# Copy ONLY necessary files from builder
+COPY package*.json ./
+RUN npm install --only=production
+
+# Copy compiled code
+COPY --from=builder /app/api/dist ./dist
+
+# Expose API port
+EXPOSE 5000
+
+# Run the API
+CMD ["node", "dist/server.js"]

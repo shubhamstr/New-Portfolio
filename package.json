@@ -6,6 +6,7 @@
     "dev": "nx serve web",
     "api": "nx serve api --configuration=development",
     "build": "nx build web",
+    "api-build": "nx build web",
     "test": "nx test web"
   },
   "private": true,
