@@ -2,29 +2,61 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 
-# Copy only API directory
+# Debug: Starting build stage
+RUN echo "=== [Builder Stage] Starting build stage ==="
+
+# Debug: Show root folder before copying
+RUN echo "=== Files in /app BEFORE copy ===" && ls -al /app
+
+# Copy only package files (for caching)
 COPY package*.json ./api/
+
+# Debug: Confirm package files were copied
+RUN echo "=== package.json copied to /app/api ===" && ls -al /app/api
+
 WORKDIR /app/api
+
+# Install dependencies
+RUN echo "=== Installing dependencies... ==="
 RUN npm install
 
-# Copy full API source
-COPY api/ ./
+# Debug: Show installed node_modules
+RUN echo "=== node_modules installed ===" && ls -al /app/api/node_modules | head
 
 # Build TypeScript -> dist
+RUN echo "=== Running build command: npm run api-build ==="
 RUN npm run api-build
+
+# Debug: Check dist folder exists
+RUN echo "=== Checking dist folder ===" && ls -al /app/api/dist
 
 
 # ---------- Stage 2: Production ----------
 FROM node:18-alpine
 WORKDIR /app
 
-# Copy package files and install only production deps
+# Debug: Starting production stage
+RUN echo "=== [Production Stage] Starting production stage ==="
+
+# Copy package.json files
 COPY package*.json ./
+
+# Install only production dependencies
+RUN echo "=== Installing production-only dependencies... ==="
 RUN npm install --only=production
 
+# Debug: Show installed production node_modules
+RUN echo "=== Production node_modules installed ===" && ls -al /app/node_modules | head
+
 # Copy compiled output from builder
+RUN echo "=== Copying dist folder from builder stage ==="
 COPY --from=builder /app/api/dist ./dist
 
+# Debug: Confirm dist is copied
+RUN echo "=== Final dist folder ===" && ls -al /app/dist
+
 EXPOSE 5000
+
+RUN echo "=== Docker image build completed. Ready to start API. ==="
 
 CMD ["node", "dist/server.js"]
