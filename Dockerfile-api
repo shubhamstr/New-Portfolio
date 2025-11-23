@@ -28,6 +28,8 @@ COPY --from=builder /app/api/dist ./dist
 
 COPY api/.env .env
 
+COPY api/src/db.json ./dist/db.json
+
 # If your API uses anything else (public/, prisma/, env files), copy accordingly
 # COPY --from=builder /app/api/prisma ./prisma
 
