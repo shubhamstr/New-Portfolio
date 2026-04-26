@@ -21,10 +21,10 @@ const OtherProjects = () => {
   // }, []);
 
   return (
-    <section className="py-16 bg-white" id="other-projects">
+    <section className="py-16 bg-white" id="tools">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">
-          Other <span className="text-purple-600">Projects</span>
+          Tools I Built for <span className="text-purple-600">Developers</span>
         </h2>
 
         {/* Projects Grid */}
@@ -32,7 +32,7 @@ const OtherProjects = () => {
           {skillsData?.projects && skillsData.projects.map((project: any) => (
             <div
               key={project.title}
-              className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border ${project.type === "others" ? "" : "hidden"}`}
+              className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border ${project.type === "tools" ? "" : "hidden"}`}
             >
               <img
                 src={project.image}
@@ -83,6 +83,18 @@ const OtherProjects = () => {
           ))}
         </div>
 
+        {/* GitHub CTA */}
+        <div className="mt-12">
+          <p className="text-gray-600 mb-4">Want to see more of my work?</p>
+          <a
+            href={skillsData?.URLs?.githubURL || '/'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-white border border-purple-600 text-purple-600 rounded-lg shadow hover:bg-purple-600 hover:text-white transition"
+          >
+            View All Projects on GitHub
+          </a>
+        </div>
       </div>
     </section>
   );

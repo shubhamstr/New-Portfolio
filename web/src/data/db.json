@@ -47,16 +47,7 @@
       "techStacks": ["React.js", "Node.js", "MongoDB", "WebSocket", "Express.js"],
       "demoLink": "https://realtime-socket-chat-app.netlify.app/login",
       "githubLink": "https://github.com/shubhamstr/Realtime-Chat-App",
-      "featured": true
-    },
-    {
-      "title": "E-Commerce Platform",
-      "description": "A full-stack e-commerce solution built with React.js, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
-      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "Node.js"],
-      "demoLink": "",
-      "githubLink": "",
-      "featured": false
+      "type": "featured"
     },
     {
       "title": "Task Management App",
@@ -65,7 +56,16 @@
       "techStacks": ["React.js", "PHP"],
       "demoLink": "",
       "githubLink": "",
-      "featured": true
+      "type": "featured"
+    },
+    {
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce solution built with React.js, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": ["React.js", "Node.js"],
+      "demoLink": "",
+      "githubLink": "",
+      "type": "others"
     },
     {
       "title": "Restaurant Website",
@@ -74,7 +74,7 @@
       "techStacks": ["React.js", "PHP"],
       "demoLink": "",
       "githubLink": "",
-      "featured": false
+      "type": "others"
     },
     {
       "title": "Portfolio Dashboard",
@@ -83,7 +83,7 @@
       "techStacks": ["React.js", "PHP"],
       "demoLink": "",
       "githubLink": "",
-      "featured": false
+      "type": "others"
     },
     {
       "title": "Blog Platform",
@@ -92,26 +92,25 @@
       "techStacks": ["React.js", "PHP"],
       "demoLink": "",
       "githubLink": "",
-      "featured": false
+      "type": "others"
     },
     {
-      "title": "Weather App",
-      "description": "A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      "image": "https://images.unsplash.com/photo-1501973801540-537f08ccae7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "PHP"],
-      "demoLink": "",
-      "githubLink": "",
-      "featured": false
-    }
-  ],
-  "contacts": [
-    { "fullName": "shubham", "email": "abc@gmail.com", "subject": "lg", "message": "gkj" },
-    { "fullName": "shubham", "email": "abc@gmail.com", "subject": "lg", "message": "gkj" },
+      "title": "Boilerplate Generator",
+      "description": "A boilerplate generator that streamlines project initialization by providing ready-to-use templates, helping developers kickstart applications with best practices and minimal setup.",
+      "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "techStacks": ["Node.js", "Express.js"],
+      "demoLink": "https://www.npmjs.com/package/@shubhamstr/boilerplate-generator",
+      "githubLink": "https://github.com/shubhamstr/boilerplate-generator",
+      "type": "tools"
+    },
     {
-      "fullName": "shubham",
-      "email": "shubhamsutar5799@gmail.com",
-      "subject": "asfsf",
-      "message": "sfaf"
+      "title": "Form Builder",
+      "description": "A powerful form builder npm package for creating dynamic, schema-driven forms with built-in validation, reusable components, and seamless integration into modern web applications.",
+      "image": "https://plus.unsplash.com/premium_photo-1681487870238-4a2dfddc6bcb?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
+      "techStacks": ["React.js"],
+      "demoLink": "https://www.npmjs.com/package/@shubhamstr/form-builder",
+      "githubLink": "https://github.com/shubhamstr/form-builder",
+      "type": "tools"
     }
   ]
 }

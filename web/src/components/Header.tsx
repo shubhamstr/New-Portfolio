@@ -19,6 +19,7 @@ const Header = () => {
           <a href="#home" className="hover:text-primary-500 transition">Home</a>
           <a href="#skills" className="hover:text-primary-500 transition">Skills</a>
           <a href="#projects" className="hover:text-primary-500 transition">Projects</a>
+          <a href="#tools" className="hover:text-primary-500 transition">Tools</a>
           <a href="#contact" className="hover:text-primary-500 transition">Contact</a>
         </nav>
 
@@ -65,6 +66,9 @@ const Header = () => {
             </li>
             <li>
               <a href="#projects" className="block hover:text-primary-500 transition" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+            </li>
+            <li>
+              <a href="#tools" className="block hover:text-primary-500 transition" onClick={() => setIsMobileMenuOpen(false)}>Tools</a>
             </li>
             <li>
               <a href="#contact" className="block hover:text-primary-500 transition" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>

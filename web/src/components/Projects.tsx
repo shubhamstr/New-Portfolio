@@ -30,7 +30,7 @@ const Projects = () => {
           {skillsData?.projects && skillsData.projects.map((project: any) => (
             <div
               key={project.title}
-              className={`bg-white shadow-lg rounded-2xl overflow-hidden text-left ${project.featured ? "" : "hidden"}`}
+              className={`bg-white shadow-lg rounded-2xl overflow-hidden text-left ${project.type === "featured" ? "" : "hidden"}`}
             >
               <img
                 src={project.image}
