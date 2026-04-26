@@ -173,7 +173,7 @@
     },
     {
       "title": "E-Commerce Platform",
-      "description": "A full-stack e-commerce solution built with React.js, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
+      "description": "A full-stack e-commerce platform built with React.js, Node.js, and MongoDB, featuring secure user authentication, seamless payment integration, and a powerful admin dashboard for product and order management.",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       "techStacks": [
         "React.js",
@@ -190,7 +190,7 @@
     },
     {
       "title": "V-Arts",
-      "description": "A curated online store showcasing handmade art and crafts, including custom keychains, paintings, and wooden products crafted with creativity and care.",
+      "description": "A curated online store for handmade art and crafts, offering custom keychains, paintings, and wooden creations, with a clean shopping experience and easy browsing for unique, creative products.",
       "image": "https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
       "techStacks": [
         "PHP",
@@ -202,7 +202,7 @@
     },
     {
       "title": "Blog Platform",
-      "description": "A modern blog platform with content management system, SEO optimization, and social media integration.",
+      "description": "A modern blog platform with a built-in content management system, SEO optimization features, and social media integration, enabling users to create, manage, and share engaging content effortlessly.",
       "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       "techStacks": [
         "PHP"
