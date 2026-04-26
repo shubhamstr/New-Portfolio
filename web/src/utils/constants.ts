@@ -1,1 +1,1 @@
-export const DB_URL = "https://raw.githubusercontent.com/shubhamstr/New-Portfolio/refs/heads/main/api/src/db.json";
+export const DB_URL = "https://raw.githubusercontent.com/shubhamstr/New-Portfolio/refs/heads/main/web/src/data/db.json";
