@@ -1,18 +1,18 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
-import { useApi } from "../hooks/useApi";
+// import { useEffect } from "react";
+// import { useApi } from "../hooks/useApi";
 import hero_img from '../assets/hero_img.png'
+import { useSkillsStore } from "../store/skillsStore";
 
 const Hero = () => {
-  const { data: urlData, callApi: getURLs }: any = useApi();
+  const skillsData = useSkillsStore((state) => state.skillsData);
+  // const { data: urlData, callApi: getURLs }: any = useApi();
 
-  useEffect(() => {
-    getURLs({
-      url: "/get/URLs",
-      method: "GET",
-    });
-  }, []);
+  // useEffect(() => {
+  //   getURLs({
+  //     url: "/get/URLs",
+  //     method: "GET",
+  //   });
+  // }, []);
   return (
     <section
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-white to-purple-50 overflow-hidden px-4 md:px-0"
@@ -43,7 +43,7 @@ const Hero = () => {
           {/* Buttons */}
           <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center md:justify-start">
             <a
-              href={urlData?.resumeURL || '/'}
+              href={skillsData?.URLs?.resumeURL || '/'}
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:scale-105 transition"
               target="_blank"
               rel="noreferrer"
@@ -76,7 +76,7 @@ const Hero = () => {
           {/* Social icons */}
           <div className="mt-4 sm:mt-8 flex justify-center md:justify-start space-x-3 sm:space-x-4">
             <a
-              href={urlData?.githubURL || '/'}
+              href={skillsData?.URLs?.githubURL || '/'}
               className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
               target="_blank"
               rel="noreferrer"
@@ -84,7 +84,7 @@ const Hero = () => {
               <i className="fa-brands fa-github text-gray-700"></i>
             </a>
             <a
-              href={urlData?.linkedInURL || '/'}
+              href={skillsData?.URLs?.linkedInURL || '/'}
               className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
               target="_blank"
               rel="noreferrer"
@@ -92,7 +92,7 @@ const Hero = () => {
               <i className="fa-brands fa-linkedin text-blue-600"></i>
             </a>
             <a
-              href={urlData?.twitterURL || '/'}
+              href={skillsData?.URLs?.twitterURL || '/'}
               className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
               target="_blank"
               rel="noreferrer"
@@ -100,7 +100,7 @@ const Hero = () => {
               <i className="fa-brands fa-twitter text-sky-500"></i>
             </a>
             <a
-              href={urlData?.codepenURL || '/'}
+              href={skillsData?.URLs?.codepenURL || '/'}
               className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
               target="_blank"
               rel="noreferrer"

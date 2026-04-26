@@ -1,18 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/accessible-emoji */
-import { useEffect } from "react";
-import { useApi } from "../hooks/useApi";
+// import { useEffect } from "react";
+// import { useApi } from "../hooks/useApi";
+import { useSkillsStore } from "../store/skillsStore";
 
 const Projects = () => {
-  const { data: projectsData, loading: projectsLoading, callApi: getProjects }: any = useApi();
+  const skillsData = useSkillsStore((state) => state.skillsData);
+  // const { data: projectsData, loading: projectsLoading, callApi: getProjects }: any = useApi();
 
-  useEffect(() => {
-    getProjects({
-      url: "/get/projects",
-      method: "GET",
-    });
-  }, []);
+  // useEffect(() => {
+  //   getProjects({
+  //     url: "/get/projects",
+  //     method: "GET",
+  //   });
+  // }, []);
 
   return (
     <section className="py-16 bg-gray-50" id="projects">
@@ -26,7 +27,7 @@ const Projects = () => {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {!projectsLoading && projectsData.map((project: any) => (
+          {skillsData?.projects && skillsData.projects.map((project: any) => (
             <div
               key={project.title}
               className={`bg-white shadow-lg rounded-2xl overflow-hidden text-left ${project.featured ? "" : "hidden"}`}

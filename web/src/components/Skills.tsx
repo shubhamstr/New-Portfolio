@@ -1,18 +1,20 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/accessible-emoji */
-import { useEffect } from "react";
-import { useApi } from "../hooks/useApi";
+// import { useEffect } from "react";
+// import { useApi } from "../hooks/useApi";
+import { useSkillsStore } from "../store/skillsStore";
 
 const Skills = () => {
-  const { data: skillsData, loading: skillsLoading, callApi: getSkills }: any = useApi();
+  const skillsData = useSkillsStore((state) => state.skillsData);
+  // const { data: skillsData, loading: skillsLoading, callApi: getSkills }: any = useApi();
 
-  useEffect(() => {
-    getSkills({
-      url: "/get/skills",
-      method: "GET",
-    });
-  }, []);
+  // useEffect(() => {
+  //   getSkills({
+  //     url: "/get/skills",
+  //     method: "GET",
+  //   });
+  //   fetchData();
+  // }, []);
 
   return (
     <section className="py-16 bg-gray-50" id="skills">
@@ -32,7 +34,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-blue-600">💻</span> Frontend Development
             </h3>
-            {!skillsLoading && skillsData?.frontend && skillsData.frontend.map((skill: any) => (
+            {skillsData?.skills?.frontend && skillsData.skills.frontend.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -53,7 +55,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-green-600">⚙️</span> Backend Development
             </h3>
-            {!skillsLoading && skillsData?.backend && skillsData.backend.map((skill: any) => (
+            {skillsData?.skills?.backend && skillsData.skills.backend.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -74,7 +76,7 @@ const Skills = () => {
             <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
               <span className="text-purple-600">🗄️</span> Database & Tools
             </h3>
-            {!skillsLoading && skillsData?.database && skillsData.database.map((skill: any) => (
+            {skillsData?.skills?.database && skillsData.skills.database.map((skill: any) => (
               <div key={skill.name} className={`mb-4 ${skill.visible ? '' : 'hidden'}`}>
                 <div className="flex justify-between mb-1">
                   <span className="text-gray-700">{skill.name}</span>
@@ -95,7 +97,7 @@ const Skills = () => {
         <div className="mt-12">
           <h3 className="text-xl font-semibold mb-6">Other Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {!skillsLoading && skillsData?.other && skillsData.other.map((tech: any) => (
+            {skillsData?.skills?.other && skillsData.skills.other.map((tech: any) => (
               <span
                 key={tech}
                 className="px-4 py-2 bg-white shadow rounded-full text-gray-700 text-sm"

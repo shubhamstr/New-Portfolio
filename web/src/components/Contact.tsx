@@ -58,7 +58,7 @@ const Contact = () => {
                   <p className="text-gray-700">shubhamsutar5799@gmail.com</p>
                 </div>
               </div>
-              <div className="hidden flex items-center gap-4 bg-white p-4 shadow rounded-xl">
+              <div className="hidden items-center gap-4 bg-white p-4 shadow rounded-xl">
                 <span className="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
                   📞
                 </span>

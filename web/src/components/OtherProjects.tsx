@@ -1,23 +1,24 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/accessible-emoji */
-import { useEffect } from "react";
-import { useApi } from "../hooks/useApi";
+// import { useEffect } from "react";
+// import { useApi } from "../hooks/useApi";
+import { useSkillsStore } from "../store/skillsStore";
 
 const OtherProjects = () => {
-  const { data: projectsData, loading: projectsLoading, callApi: getProjects }: any = useApi();
-  const { data: urlData, callApi: getURLs }: any = useApi();
+  const skillsData = useSkillsStore((state) => state.skillsData);
+  // const { data: projectsData, loading: projectsLoading, callApi: getProjects }: any = useApi();
+  // const { data: urlData, callApi: getURLs }: any = useApi();
 
-  useEffect(() => {
-    getURLs({
-      url: "/get/URLs",
-      method: "GET",
-    });
-    getProjects({
-      url: "/get/projects",
-      method: "GET",
-    });
-  }, []);
+  // useEffect(() => {
+  //   getURLs({
+  //     url: "/get/URLs",
+  //     method: "GET",
+  //   });
+  //   getProjects({
+  //     url: "/get/projects",
+  //     method: "GET",
+  //   });
+  // }, []);
 
   return (
     <section className="py-16 bg-white" id="other-projects">
@@ -28,7 +29,7 @@ const OtherProjects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
-          {!projectsLoading && projectsData.map((project: any) => (
+          {skillsData?.projects && skillsData.projects.map((project: any) => (
             <div
               key={project.title}
               className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border ${project.featured ? "hidden" : ""}`}
@@ -86,7 +87,7 @@ const OtherProjects = () => {
         <div className="mt-12">
           <p className="text-gray-600 mb-4">Want to see more of my work?</p>
           <a
-            href={urlData?.githubURL || '/'}
+            href={skillsData?.URLs?.githubURL || '/'}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-white border border-purple-600 text-purple-600 rounded-lg shadow hover:bg-purple-600 hover:text-white transition"

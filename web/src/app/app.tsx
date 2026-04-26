@@ -6,8 +6,27 @@ import Projects from '../components/Projects';
 import OtherProjects from '../components/OtherProjects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import { useSkillsStore } from "../store/skillsStore";
+import { useEffect } from 'react';
+import { DB_URL } from '../utils/constants';
 
 export function App() {
+  const setSkillsData = useSkillsStore((state) => state.setSkillsData);
+
+  const fetchData = async () => {
+    const res = await fetch(
+      DB_URL
+    );
+    const data = await res.json();
+    console.log(data)
+    setSkillsData(data);
+  };
+
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="scroll-smooth">
       <Header />
