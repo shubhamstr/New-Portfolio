@@ -4,9 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ui": "nx serve web",
-    "api": "nx serve api --configuration=development",
     "build": "nx build web",
-    "api-build": "nx build api",
     "test": "nx test web"
   },
   "private": true,
@@ -64,15 +62,11 @@
   },
   "workspaces": [
     "packages/*",
-    "web",
-    "api"
+    "web"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "axios": "^1.11.0",
-    "dotenv": "^17.2.3",
-    "express": "^4.21.2",
-    "node-json-db": "^2.3.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router-dom": "6.29.0",
