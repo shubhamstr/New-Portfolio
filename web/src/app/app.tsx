@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import { useSkillsStore } from "../store/skillsStore";
 import { useEffect } from 'react';
 import { DB_URL } from '../utils/constants';
-import dbData from '../data/db.json';
+// import dbData from '../data/db.json';
 import Tools from '../components/Tools';
 
 export function App() {
@@ -21,12 +21,12 @@ export function App() {
     );
     const data = await res.json();
     console.log(data)
-    // setSkillsData(data);
+    setSkillsData(data);
   };
 
   useEffect(() => {
     fetchData();
-    setSkillsData(dbData);
+    // setSkillsData(dbData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
