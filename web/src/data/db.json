@@ -97,7 +97,7 @@
     {
       "title": "Boilerplate Generator",
       "description": "A boilerplate generator that streamlines project initialization by providing ready-to-use templates, helping developers kickstart applications with best practices and minimal setup.",
-      "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+      "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
       "techStacks": ["Node.js", "Express.js"],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/boilerplate-generator",
       "githubLink": "https://github.com/shubhamstr/boilerplate-generator",
@@ -110,6 +110,24 @@
       "techStacks": ["React.js"],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/form-builder",
       "githubLink": "https://github.com/shubhamstr/form-builder",
+      "type": "tools"
+    },
+    {
+      "title": "Project Rules Checker",
+      "description": "A rule-checking tool designed to validate project structure, configurations, and coding standards, ensuring consistency and reducing errors during development.",
+      "image": "https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
+      "techStacks": ["React.js"],
+      "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-rules-checker",
+      "githubLink": "https://github.com/shubhamstr/project-rules-checker",
+      "type": "tools"
+    },
+    {
+      "title": "Project Companion",
+      "description": "A lightweight VS Code extension for adding line-based notes and contextual comments, helping developers document thoughts, track tasks, and improve code readability.",
+      "image": "https://plus.unsplash.com/premium_photo-1720287601300-cf423c3d6760?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
+      "techStacks": ["React.js"],
+      "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-companion",
+      "githubLink": "https://github.com/shubhamstr/project-companion",
       "type": "tools"
     }
   ]
