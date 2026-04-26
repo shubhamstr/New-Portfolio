@@ -35,10 +35,10 @@ jobs:
         id: vars
         run: |
           if [ "${{ github.event.inputs.type }}" = "web" ]; then
-            echo "DOCKERFILE=Dockerfile-web" >> $GITHUB_OUTPUT
+            echo "DOCKERFILE=Dockerfile.web" >> $GITHUB_OUTPUT
             echo "IMAGE_NAME=portfolio-web" >> $GITHUB_OUTPUT
           else
-            echo "DOCKERFILE=Dockerfile-api" >> $GITHUB_OUTPUT
+            echo "DOCKERFILE=Dockerfile.api" >> $GITHUB_OUTPUT
             echo "IMAGE_NAME=portfolio-api" >> $GITHUB_OUTPUT
           fi
 

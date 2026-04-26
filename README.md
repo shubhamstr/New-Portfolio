@@ -100,9 +100,9 @@ pm2 logs --lines 200
 
 ### Web docker image build and run
 
-docker build -f Dockerfile-web -t portfolio-web .
+docker build -f Dockerfile.web -t portfolio-web .
 
-docker build -f Dockerfile-api -t portfolio-api .
+docker build -f Dockerfile.api -t portfolio-api .
 
 docker run -d -p 8080:80 --name web-app portfolio-web
 
