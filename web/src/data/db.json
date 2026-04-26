@@ -7,6 +7,16 @@
         "visible": true
       },
       {
+        "name": "Next.js",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "TypeScript",
+        "level": 60,
+        "visible": true
+      },
+      {
         "name": "JavaScript",
         "level": 80,
         "visible": true
@@ -32,14 +42,14 @@
         "visible": false
       },
       {
-        "name": "React Native",
-        "level": 70,
+        "name": "React Native (Android)",
+        "level": 60,
         "visible": true
       },
       {
         "name": "Angular",
-        "level": 40,
-        "visible": false
+        "level": 20,
+        "visible": true
       }
     ],
     "backend": [
@@ -61,16 +71,16 @@
       {
         "name": "Laravel",
         "level": 70,
-        "visible": false
+        "visible": true
       },
       {
         "name": "CodeIgniter",
         "level": 50,
-        "visible": false
+        "visible": true
       },
       {
         "name": "Python",
-        "level": 40,
+        "level": 20,
         "visible": true
       },
       {
@@ -81,6 +91,11 @@
       {
         "name": "NoSQL",
         "level": 70,
+        "visible": true
+      },
+      {
+        "name": "Postman",
+        "level": 60,
         "visible": true
       }
     ],
@@ -96,13 +111,18 @@
         "visible": true
       },
       {
-        "name": "Jira",
+        "name": "Zoho Sprints",
         "level": 90,
         "visible": true
       },
       {
+        "name": "Jira",
+        "level": 70,
+        "visible": true
+      },
+      {
         "name": "Docker",
-        "level": 65,
+        "level": 70,
         "visible": true
       },
       {
@@ -122,18 +142,22 @@
       },
       {
         "name": "GitLab",
-        "level": 90,
-        "visible": false
+        "level": 50,
+        "visible": true
       }
     ],
     "other": [
       "AWS",
+      "GCP",
+      "Microsoft Azure",
       "npm",
       "yarn",
       "composer",
       "FileZilla",
       "MongoDB Compass",
-      "PHPMyAdmin"
+      "PHPMyAdmin",
+      "VS Code",
+      "Android Studio"
     ]
   },
   "URLs": {
