@@ -34,15 +34,37 @@ const OtherProjects = () => {
               key={project.title}
               className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border ${project.type === "others" ? "" : "hidden"}`}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-cover"
-              />
+              <div className="relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-40 object-cover"
+                />
+                {project.inProgress && (
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent">
+                    <div className="w-full p-3">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/50 bg-slate-950/65 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-amber-300 backdrop-blur-sm shadow-lg">
+                        <span className="h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_0_4px_rgba(251,191,36,0.2)]" />
+                        In Progress
+                      </div>
+                      <p className="mt-2 max-w-[14rem] text-xs leading-5 text-white/90">
+                        This project is currently being built and will be updated soon.
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
               <div className="p-5">
-                <h3 className="text-lg font-semibold mb-2">
-                  {project.title}
-                </h3>
+                <div className="mb-2 flex items-start justify-between gap-3">
+                  <h3 className="text-lg font-semibold">
+                    {project.title}
+                  </h3>
+                  {/* {project.inProgress && (
+                    <span className="shrink-0 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-700 shadow-sm">
+                      In Progress
+                    </span>
+                  )} */}
+                </div>
                 <p className="text-gray-600 text-sm mb-3">
                   {project.description}
                 </p>
