@@ -1,36 +1,140 @@
 {
   "skills": {
     "frontend": [
-      { "name": "React.js", "level": 85, "visible": true },
-      { "name": "JavaScript", "level": 80, "visible": true },
-      { "name": "Tailwind CSS", "level": 80, "visible": true },
-      { "name": "HTML/CSS", "level": 90, "visible": true },
-      { "name": "Bootstrap", "level": 90, "visible": true },
-      { "name": "jQuery", "level": 80, "visible": false },
-      { "name": "React Native", "level": 70, "visible": true },
-      { "name": "Angular", "level": 40, "visible": false }
+      {
+        "name": "React.js",
+        "level": 85,
+        "visible": true
+      },
+      {
+        "name": "JavaScript",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Tailwind CSS",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "HTML/CSS",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "Bootstrap",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "jQuery",
+        "level": 80,
+        "visible": false
+      },
+      {
+        "name": "React Native",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "Angular",
+        "level": 40,
+        "visible": false
+      }
     ],
     "backend": [
-      { "name": "Node.js", "level": 75, "visible": true },
-      { "name": "Express.js", "level": 90, "visible": true },
-      { "name": "PHP", "level": 80, "visible": true },
-      { "name": "Laravel", "level": 70, "visible": false },
-      { "name": "CodeIgniter", "level": 50, "visible": false },
-      { "name": "Python", "level": 40, "visible": true },
-      { "name": "SQL", "level": 80, "visible": true },
-      { "name": "NoSQL", "level": 70, "visible": true }
+      {
+        "name": "Node.js",
+        "level": 75,
+        "visible": true
+      },
+      {
+        "name": "Express.js",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "PHP",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Laravel",
+        "level": 70,
+        "visible": false
+      },
+      {
+        "name": "CodeIgniter",
+        "level": 50,
+        "visible": false
+      },
+      {
+        "name": "Python",
+        "level": 40,
+        "visible": true
+      },
+      {
+        "name": "SQL",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "NoSQL",
+        "level": 70,
+        "visible": true
+      }
     ],
     "database": [
-      { "name": "MySQL", "level": 80, "visible": true },
-      { "name": "MongoDB", "level": 70, "visible": true },
-      { "name": "Jira", "level": 90, "visible": true },
-      { "name": "Docker", "level": 65, "visible": true },
-      { "name": "Git", "level": 90, "visible": true },
-      { "name": "GitHub", "level": 90, "visible": true },
-      { "name": "BitBucket", "level": 90, "visible": true },
-      { "name": "GitLab", "level": 90, "visible": false }
+      {
+        "name": "MySQL",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "MongoDB",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "Jira",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "Docker",
+        "level": 65,
+        "visible": true
+      },
+      {
+        "name": "Git",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "GitHub",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "BitBucket",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "GitLab",
+        "level": 90,
+        "visible": false
+      }
     ],
-    "other": ["AWS", "npm", "yarn", "composer", "FileZilla", "MongoDB Compass", "PHPMyAdmin"]
+    "other": [
+      "AWS",
+      "npm",
+      "yarn",
+      "composer",
+      "FileZilla",
+      "MongoDB Compass",
+      "PHPMyAdmin"
+    ]
   },
   "URLs": {
     "resumeURL": "https://codeguest.in/portfolio/assets/files/Shubham%20Sutar.pdf",
@@ -44,61 +148,78 @@
       "title": "Realtime Chat App",
       "description": "A real-time chat application built with React.js, Node.js, and MongoDB, enabling instant messaging with WebSocket-based communication. Features include live message updates, message typing status, and scalable backend architecture for seamless real-time interactions.",
       "image": "https://plus.unsplash.com/premium_photo-1719839720683-72c8eb65b10a?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": ["React.js", "Node.js", "MongoDB", "WebSocket", "Express.js"],
+      "techStacks": [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "WebSocket",
+        "Express.js"
+      ],
       "demoLink": "https://realtime-socket-chat-app.netlify.app/login",
       "githubLink": "https://github.com/shubhamstr/Realtime-Chat-App",
       "type": "featured"
     },
     {
       "title": "Task Management App",
-      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "description": "A task management application designed to help users organize and track their daily work efficiently. Supports task creation, prioritization, and status tracking with an intuitive interface. Improves productivity by providing a clear overview of progress and pending tasks.",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "PHP"],
+      "techStacks": [
+        "React.js",
+        "PHP"
+      ],
       "demoLink": "",
-      "githubLink": "",
+      "githubLink": "https://github.com/shubhamstr/Task-Management-System",
       "type": "featured"
     },
     {
       "title": "E-Commerce Platform",
       "description": "A full-stack e-commerce solution built with React.js, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "Node.js"],
+      "techStacks": [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "MySQL"
+      ],
       "demoLink": "",
-      "githubLink": "",
+      "githubLink": "https://github.com/shubhamstr/E-Commerce-Platform-Website",
+      "githubLink2": "https://github.com/shubhamstr/E-Commerce-Platform-Admin",
+      "githubLink3": "https://github.com/shubhamstr/E-Commerce-Platform-API",
       "type": "others"
     },
     {
-      "title": "Restaurant Website",
-      "description": "A responsive restaurant website with online reservation system, menu display, and customer review management.",
-      "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "PHP"],
+      "title": "V-Arts",
+      "description": "A curated online store showcasing handmade art and crafts, including custom keychains, paintings, and wooden products crafted with creativity and care.",
+      "image": "https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
+      "techStacks": [
+        "PHP",
+        "Laravel"
+      ],
       "demoLink": "",
-      "githubLink": "",
-      "type": "others"
-    },
-    {
-      "title": "Portfolio Dashboard",
-      "description": "A dynamic portfolio dashboard for showcasing projects, skills, and achievements with admin panel for content management.",
-      "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "PHP"],
-      "demoLink": "",
-      "githubLink": "",
+      "githubLink": "https://github.com/shubhamstr/varts",
       "type": "others"
     },
     {
       "title": "Blog Platform",
       "description": "A modern blog platform with content management system, SEO optimization, and social media integration.",
       "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": ["React.js", "PHP"],
+      "techStacks": [
+        "PHP"
+      ],
       "demoLink": "",
-      "githubLink": "",
+      "githubLink": "https://github.com/shubhamstr/Trendsquad-Web",
+      "githubLink2": "https://github.com/shubhamstr/Trendsquad-Admin",
       "type": "others"
     },
     {
       "title": "Boilerplate Generator",
       "description": "A boilerplate generator that streamlines project initialization by providing ready-to-use templates, helping developers kickstart applications with best practices and minimal setup.",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": ["Node.js", "Express.js"],
+      "techStacks": [
+        "Node.js",
+        "Express.js"
+      ],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/boilerplate-generator",
       "githubLink": "https://github.com/shubhamstr/boilerplate-generator",
       "type": "tools"
@@ -107,7 +228,9 @@
       "title": "Form Builder",
       "description": "A powerful form builder npm package for creating dynamic, schema-driven forms with built-in validation, reusable components, and seamless integration into modern web applications.",
       "image": "https://plus.unsplash.com/premium_photo-1681487870238-4a2dfddc6bcb?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": ["React.js"],
+      "techStacks": [
+        "React.js"
+      ],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/form-builder",
       "githubLink": "https://github.com/shubhamstr/form-builder",
       "type": "tools"
@@ -116,7 +239,9 @@
       "title": "Project Rules Checker",
       "description": "A rule-checking tool designed to validate project structure, configurations, and coding standards, ensuring consistency and reducing errors during development.",
       "image": "https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": ["React.js"],
+      "techStacks": [
+        "React.js"
+      ],
       "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-rules-checker",
       "githubLink": "https://github.com/shubhamstr/project-rules-checker",
       "type": "tools"
@@ -125,7 +250,9 @@
       "title": "Project Companion",
       "description": "A lightweight VS Code extension for adding line-based notes and contextual comments, helping developers document thoughts, track tasks, and improve code readability.",
       "image": "https://plus.unsplash.com/premium_photo-1720287601300-cf423c3d6760?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": ["React.js"],
+      "techStacks": [
+        "React.js"
+      ],
       "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-companion",
       "githubLink": "https://github.com/shubhamstr/project-companion",
       "type": "tools"

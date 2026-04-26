@@ -77,6 +77,26 @@ const OtherProjects = () => {
                   >
                     💻 Code
                   </a>
+                  {project?.githubLink2 && (
+                    <a
+                      href={project.githubLink2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-gray-700 hover:underline"
+                    >
+                      💻 Code 2
+                    </a>
+                  )}
+                  {project?.githubLink3 && (
+                    <a
+                      href={project.githubLink3}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-gray-700 hover:underline"
+                    >
+                      💻 Code 3
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
