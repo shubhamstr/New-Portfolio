@@ -183,9 +183,11 @@
         "MySQL"
       ],
       "demoLink": "",
-      "githubLink": "https://github.com/shubhamstr/E-Commerce-Platform-Website",
-      "githubLink2": "https://github.com/shubhamstr/E-Commerce-Platform-Admin",
-      "githubLink3": "https://github.com/shubhamstr/E-Commerce-Platform-API",
+      "githubLink": [
+        "https://github.com/shubhamstr/E-Commerce-Platform-Website",
+        "https://github.com/shubhamstr/E-Commerce-Platform-Admin",
+        "https://github.com/shubhamstr/E-Commerce-Platform-API"
+      ],
       "type": "others"
     },
     {
@@ -208,8 +210,10 @@
         "PHP"
       ],
       "demoLink": "",
-      "githubLink": "https://github.com/shubhamstr/Trendsquad-Web",
-      "githubLink2": "https://github.com/shubhamstr/Trendsquad-Admin",
+      "githubLink": [
+        "https://github.com/shubhamstr/Trendsquad-Web",
+        "https://github.com/shubhamstr/Trendsquad-Admin"
+      ],
       "type": "others"
     },
     {

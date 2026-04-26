@@ -69,32 +69,34 @@ const OtherProjects = () => {
                   >
                     🔗 Live
                   </a>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-gray-700 hover:underline"
-                  >
-                    💻 Code
-                  </a>
-                  {project?.githubLink2 && (
+                  {Array.isArray(project.githubLink) && project.githubLink.length > 0 ? (
+                    <div className="relative inline-block group">
+                      <button className="flex items-center gap-1 text-gray-700">
+                        💻 Code ▾
+                      </button>
+
+                      <div className="absolute bottom-6 mt-1 z-10 min-w-[120px] bg-white shadow-md rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        {project.githubLink.map((link: any, index: any) => (
+                          <a
+                            key={index}
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Code {index + 1}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
                     <a
-                      href={project.githubLink2}
+                      href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-gray-700 hover:underline"
                     >
-                      💻 Code 2
-                    </a>
-                  )}
-                  {project?.githubLink3 && (
-                    <a
-                      href={project.githubLink3}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-gray-700 hover:underline"
-                    >
-                      💻 Code 3
+                      💻 Code
                     </a>
                   )}
                 </div>
