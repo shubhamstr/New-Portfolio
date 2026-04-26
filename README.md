@@ -120,3 +120,6 @@ docker push shubhamstr/portfolio-api:v1
 
 
 docker exec -it portfolio-api ls
+
+docker system prune -af
+docker volume prune -f
