@@ -62,10 +62,13 @@ const OtherProjects = () => {
                 {/* Buttons */}
                 <div className="flex gap-4 text-sm">
                   <a
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-blue-600 hover:underline"
+                    href={project.demoLink || "#"}
+                    target={project.demoLink ? "_blank" : undefined}
+                    rel={project.demoLink ? "noopener noreferrer" : undefined}
+                    className={`flex items-center gap-1 ${project.demoLink
+                      ? "text-blue-600 hover:underline"
+                      : "text-gray-400 cursor-not-allowed pointer-events-none"
+                      }`}
                   >
                     🔗 Live
                   </a>

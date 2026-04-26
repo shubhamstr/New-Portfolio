@@ -58,10 +58,14 @@ const Projects = () => {
                 {/* Buttons */}
                 <div className="flex gap-4">
                   <a
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 transition"
+                    href={project.demoLink ? project.demoLink : undefined}
+                    target={project.demoLink ? "_blank" : undefined}
+                    rel={project.demoLink ? "noopener noreferrer" : undefined}
+                    onClick={(e) => !project.demoLink && e.preventDefault()}
+                    className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg transition ${project.demoLink
+                      ? "bg-purple-600 text-white hover:bg-purple-700"
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                      }`}
                   >
                     🚀 Live Demo
                   </a>
