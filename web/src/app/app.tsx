@@ -8,27 +8,33 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { useSkillsStore } from "../store/skillsStore";
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { DB_URL } from '../utils/constants';
-// import dbData from '../data/db.json';
+import dbData from '../data/db.json';
 import Tools from '../components/Tools';
 
 export function App() {
   const setSkillsData = useSkillsStore((state) => state.setSkillsData);
+  const location = useLocation();
+  const isTestRoute = location.pathname === '/test';
 
   const fetchData = async () => {
     const res = await fetch(
       DB_URL
     );
     const data = await res.json();
-    console.log(data)
     setSkillsData(data);
   };
 
   useEffect(() => {
+    if (isTestRoute) {
+      setSkillsData(dbData);
+      return;
+    }
+
     fetchData();
-    // setSkillsData(dbData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isTestRoute, setSkillsData]);
 
   return (
     <div className="scroll-smooth">
