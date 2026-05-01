@@ -34,8 +34,13 @@ const Footer = () => {
 
           {/* github stats */}
           <div className="col-span-2">
-            <h3 className="text-white font-semibold text-lg mb-3">GitHub Stats</h3>
-            <img src="https://github-readme-stats.vercel.app/api?username=shubhamstr&show_icons=true&theme=dark" alt="GitHub stats" />
+            <h3 className="text-white font-semibold text-lg mb-3">GitHub Streak</h3>
+            <a href="https://git.io/streak-stats">
+              <img
+                src="https://streak-stats.demolab.com?user=shubhamstr&theme=dark"
+                alt="GitHub Streak"
+              />
+            </a>
           </div>
         </div>
       </div>
