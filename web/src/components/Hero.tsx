@@ -163,7 +163,7 @@ const Hero = () => {
                   aria-label={social.label}
                   title={social.label}
                 >
-                  <i className={social.icon}></i>
+                  <i className={`${social.icon} text-lg sm:text-xl`}></i>
                 </a>
               );
             })}
