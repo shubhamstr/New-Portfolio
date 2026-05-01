@@ -1,125 +1,100 @@
-# NewPortfolio
+# New Portfolio
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+A personal portfolio website for **Shubham Sutar**, built as an **Nx workspace** with a React front end. The site showcases skills, projects, tools, social links, and a resume, with content driven from a JSON data source.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## Overview
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+The portfolio is structured as a single-page experience with these sections:
 
-## Finish your CI setup
+- Hero / intro
+- Skills
+- Featured projects
+- Other projects
+- Tools
+- Contact
+- Footer
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/InrfTQo4g0)
+Portfolio content is loaded from `web/src/data/db.json` in test mode, and from the remote JSON source configured in `web/src/utils/constants.ts` during normal usage.
 
-## Generate a library
+## Tech Stack
 
-```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
-```
+- Nx
+- React 19
+- TypeScript
+- Tailwind CSS
+- React Router
+- Zustand
+- Font Awesome
 
-## Run tasks
+## Workspace Structure
 
-To build the library use:
+- `web/` - main portfolio web app
+- `api/` - backend/service workspace area
+- `packages/` - shared packages and utilities
+- `web-e2e/` - end-to-end tests
+- `server.md` - server, Docker, and deployment notes
 
-```sh
-npx nx build pkg1
-```
+## Getting Started
 
-To run any task with Nx use:
+### Prerequisites
 
-```sh
-npx nx <target> <project-name>
-```
+- Node.js 18+ recommended
+- npm
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Versioning and releasing
-
-To version and release the library use
-
-```
-npx nx release
-```
-
-Pass `--dry-run` to see what would happen without actually releasing the library.
-
-[Learn more about Nx release &raquo;](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Keep TypeScript project references up to date
-
-Nx automatically updates TypeScript [project references](https://www.typescriptlang.org/docs/handbook/project-references.html) in `tsconfig.json` files to ensure they remain accurate based on your project dependencies (`import` or `require` statements). This sync is automatically done when running tasks such as `build` or `typecheck`, which require updated references to function correctly.
-
-To manually trigger the process to sync the project graph dependencies information to the TypeScript project references, run the following command:
+### Install dependencies
 
 ```sh
-npx nx sync
+npm install
 ```
 
-You can enforce that the TypeScript project references are always in the correct state when running in CI by adding a step to your CI job configuration that runs the following command:
+### Run the web app
 
 ```sh
-npx nx sync:check
+npm run ui
 ```
 
-[Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
+This starts the portfolio app through Nx.
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+### Build the web app
 
-## Install Nx Console
+```sh
+npm run build
+```
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+### Run tests
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```sh
+npm run test
+```
 
-## Useful links
+## Data Flow
 
-Learn more:
+The UI reads portfolio data from the `skills` store and populates it from a JSON payload.
 
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- Normal runtime: fetches data from the remote URL defined in `web/src/utils/constants.ts`
+- Test route: uses the local fixture in `web/src/data/db.json`
 
-And join the Nx community:
+This setup makes it easy to test the app locally without depending on the remote JSON file.
 
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Deployment Notes
 
-sudo lsof -i -P -n | grep LISTEN
+Server, Apache, PM2, and Docker commands are documented in `server.md`.
 
-cd /etc/apache2/sites-available
+## Useful Commands
 
-sudo nano codeguest.in.conf
+```sh
+npx nx graph
+npx nx serve web
+npx nx build web
+npx nx test web
+```
 
-pm2 list
+## Customization
 
-pm2 logs --lines 200
+To update the portfolio content, edit:
 
-### Web docker image build and run
+- `web/src/data/db.json`
+- `web/src/utils/constants.ts` if the remote JSON source changes
 
-docker build -f Dockerfile.web -t portfolio-web .
+To adjust the UI sections, check the components under `web/src/components/`.
 
-docker build -f Dockerfile.api -t portfolio-api .
-
-docker run -d -p 8080:80 --name web-app portfolio-web
-
-docker run -d -p 5000:5000 --name api-app portfolio-api
-
-docker tag portfolio-web shubhamstr/portfolio-web:v1
-
-docker tag portfolio-api shubhamstr/portfolio-api:v1
-
-docker login
-
-docker push shubhamstr/portfolio-web:v1
-
-docker push shubhamstr/portfolio-api:v1
-
-
-docker exec -it portfolio-api ls
-
-docker system prune -af
-docker volume prune -f
