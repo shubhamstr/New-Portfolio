@@ -5,6 +5,78 @@ import { useSkillsStore } from "../store/skillsStore";
 
 const Hero = () => {
   const skillsData = useSkillsStore((state) => state.skillsData);
+  const socialLinks = [
+    {
+      key: "githubURL",
+      icon: "fa-brands fa-github text-gray-700",
+      label: "GitHub",
+    },
+    {
+      key: "linkedInURL",
+      icon: "fa-brands fa-linkedin text-blue-600",
+      label: "LinkedIn",
+    },
+    // {
+    //   key: "twitterURL",
+    //   icon: "fa-brands fa-twitter text-sky-500",
+    //   label: "Twitter",
+    // },
+    {
+      key: "codepenURL",
+      icon: "fa-solid fa-code text-purple-600",
+      label: "CodePen",
+    },
+    {
+      key: "stackOverFlowURL",
+      icon: "fa-brands fa-stack-overflow text-orange-500",
+      label: "Stack Overflow",
+    },
+    {
+      key: "mediumURL",
+      icon: "fa-brands fa-medium text-gray-900",
+      label: "Medium",
+    },
+    {
+      key: "freeCodeCampURL",
+      icon: "fa-brands fa-free-code-camp text-green-600",
+      label: "freeCodeCamp",
+    },
+    {
+      key: "devToURL",
+      icon: "fa-brands fa-dev text-gray-800",
+      label: "DEV",
+    },
+    {
+      key: "leetcodeURL",
+      icon: "fa-solid fa-code text-yellow-600",
+      label: "LeetCode",
+    },
+    {
+      key: "dockerURL",
+      icon: "fa-brands fa-docker text-sky-600",
+      label: "Docker Hub",
+    },
+    {
+      key: "hackerEarthURL",
+      icon: "fa-solid fa-laptop-code text-indigo-600",
+      label: "HackerEarth",
+    },
+    {
+      key: "hackerRankURL",
+      icon: "fa-brands fa-hackerrank text-green-700",
+      label: "HackerRank",
+    },
+    {
+      key: "bitbucketURL",
+      icon: "fa-brands fa-bitbucket text-blue-700",
+      label: "Bitbucket",
+    },
+    {
+      key: "gitlabURL",
+      icon: "fa-brands fa-gitlab text-orange-600",
+      label: "GitLab",
+    },
+  ] as const;
   // const { data: urlData, callApi: getURLs }: any = useApi();
 
   // useEffect(() => {
@@ -75,39 +147,26 @@ const Hero = () => {
           </div>
 
           {/* Social icons */}
-          <div className="mt-4 sm:mt-8 flex justify-center md:justify-start space-x-3 sm:space-x-4">
-            <a
-              href={skillsData?.URLs?.githubURL || '/'}
-              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-github text-gray-700"></i>
-            </a>
-            <a
-              href={skillsData?.URLs?.linkedInURL || '/'}
-              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-linkedin text-blue-600"></i>
-            </a>
-            <a
-              href={skillsData?.URLs?.twitterURL || '/'}
-              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-brands fa-twitter text-sky-500"></i>
-            </a>
-            <a
-              href={skillsData?.URLs?.codepenURL || '/'}
-              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fa-solid fa-code text-purple-600"></i>
-            </a>
+          <div className="mt-4 sm:mt-8 flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
+            {socialLinks.map((social) => {
+              const href = skillsData?.URLs?.[social.key];
+
+              if (!href) return null;
+
+              return (
+                <a
+                  key={social.key}
+                  href={href}
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                  title={social.label}
+                >
+                  <i className={social.icon}></i>
+                </a>
+              );
+            })}
           </div>
         </div>
 
