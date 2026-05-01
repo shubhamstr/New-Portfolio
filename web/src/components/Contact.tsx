@@ -1,11 +1,18 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { firestore, firebaseReady } from "../utils/firebase";
 // import { useApi } from "../hooks/useApi";
 
 const Contact = () => {
   // const { loading: contactsLoading, callApi: createContact }: any = useApi();
   const [formData, setFormData] = useState<any>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: "success" | "error" | ""; message: string }>({
+    type: "",
+    message: "",
+  });
 
   const handleChange = ({ target }: any) => {
     setFormData((prev: any) => ({
@@ -14,23 +21,47 @@ const Contact = () => {
     }));
   };
 
-  const handleSave = (e: any) => {
+  const handleSave = async (e: any) => {
     e.preventDefault();
+    console.log("Submitting contact form with data:", formData);
 
-    // await createContact({
-    //   url: "/create/contact",
-    //   method: "POST",
-    //   data: formData
-    // });
+    if (!firebaseReady || !firestore) {
+      setStatus({
+        type: "error",
+        message:
+          "Firebase is not configured yet. Add your Firebase project values in web/src/utils/firebase.ts.",
+      });
+      return;
+    }
 
-    const recipient = "shubhamsutar5799@gmail.com";
-    const subject = encodeURIComponent(formData?.subject || "Portfolio contact");
-    const body = encodeURIComponent(
-      `Name: ${formData?.fullName || ""}\nEmail: ${formData?.email || ""}\n\nMessage:\n${formData?.message || ""}`
-    );
+    setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
 
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    setFormData({});
+    try {
+      const resp = await addDoc(collection(firestore, "contactMessages"), {
+        fullName: formData?.fullName || "",
+        email: formData?.email || "",
+        subject: formData?.subject || "Portfolio contact",
+        message: formData?.message || "",
+        createdAt: serverTimestamp(),
+        source: "portfolio-contact-form",
+      });
+      console.log("Contact message saved with ID:", resp);
+
+      setStatus({
+        type: "success",
+        message: "Message sent successfully and saved to Firebase.",
+      });
+      setFormData({});
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Something went wrong while saving your message. Please try again.",
+      });
+      console.error("Failed to save contact message:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -149,10 +180,20 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-purple-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-purple-700 transition"
+                disabled={isSubmitting}
+                className="w-full bg-purple-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-purple-700 transition disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
+              {status.message ? (
+                <p
+                  className={`text-sm ${
+                    status.type === "success" ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {status.message}
+                </p>
+              ) : null}
             </form>
           </div>
         </div>

@@ -96,5 +96,11 @@ To update the portfolio content, edit:
 - `web/src/data/db.json`
 - `web/src/utils/constants.ts` if the remote JSON source changes
 
-To adjust the UI sections, check the components under `web/src/components/`.
+To enable contact form persistence in Firebase, update:
 
+- `web/.env`
+- `web/src/utils/firebase.ts`
+
+The form writes new submissions to the `contactMessages` Firestore collection.
+
+To adjust the UI sections, check the components under `web/src/components/`.

@@ -1,6 +1,19 @@
 const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { NxReactWebpackPlugin } = require('@nx/react/webpack-plugin');
+const { DefinePlugin } = require('webpack');
 const { join } = require('path');
+const { config: loadEnv } = require('dotenv');
+
+loadEnv({ path: join(__dirname, '.env') });
+
+const firebaseEnvKeys = [
+  'FIREBASE_API_KEY',
+  'FIREBASE_AUTH_DOMAIN',
+  'FIREBASE_PROJECT_ID',
+  'FIREBASE_STORAGE_BUCKET',
+  'FIREBASE_MESSAGING_SENDER_ID',
+  'FIREBASE_APP_ID',
+];
 
 module.exports = {
   output: {
@@ -31,5 +44,14 @@ module.exports = {
       // See: https://react-svgr.com/
       // svgr: false
     }),
+    new DefinePlugin(
+      firebaseEnvKeys.reduce(
+        (acc, key) => ({
+          ...acc,
+          [`process.env.${key}`]: JSON.stringify(process.env[key] || ''),
+        }),
+        {}
+      )
+    ),
   ],
 };
