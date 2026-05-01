@@ -26,18 +26,19 @@ const Hero = () => {
         {/* Left content */}
         <div className="text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
-            Hello, <br />
+            Hi, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
-              I'm Shubham Sutar
+              I'm Shubham Sutar,
             </span>
           </h1>
           <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl text-gray-600">
-            Full Stack Web Developer
+            a Full Stack Web Developer with 5 years of experience building scalable and high-performance web applications.
           </h2>
           <p className="mt-2 sm:mt-4 text-gray-500 max-w-md sm:max-w-lg mx-auto md:mx-0">
-            I create beautiful, responsive websites using modern technologies like
-            JavaScript, PHP, React.js, and Tailwind. Based in Pune, India, I'm
-            passionate about bringing digital ideas to life.
+            I specialize in JavaScript, React.js, PHP, and Tailwind CSS, focusing on clean architecture and responsive design.
+          </p>
+          <p className="text-gray-500 max-w-md sm:max-w-lg mx-auto md:mx-0">
+            Based in Pune, I’m passionate about turning ideas into efficient, user-friendly digital products.
           </p>
 
           {/* Buttons */}
