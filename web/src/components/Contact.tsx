@@ -65,13 +65,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50" id="contact">
+    <section className="py-16 bg-gray-50 dark:bg-slate-900/60" id="contact">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
             Get In <span className="text-purple-600">Touch</span>
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-slate-600 dark:text-slate-300 mt-2">
             Have a project in mind or want to collaborate? I'd love to hear from
             you. Let's create something amazing together!
           </p>
@@ -79,21 +79,21 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Let's Talk</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-xl font-semibold mb-4 text-slate-900 dark:text-slate-100">Let's Talk</h3>
+            <p className="text-slate-600 dark:text-slate-300 mb-6">
               I'm always open to discussing new opportunities, creative ideas,
               or potential collaborations. Feel free to reach out through any of
               the following channels.
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4 bg-white p-4 shadow rounded-xl">
+              <div className="flex items-center gap-4 bg-white p-4 shadow rounded-xl dark:bg-slate-800 dark:shadow-slate-950/40">
                 <span role="img" aria-label="Email" className="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
                   📧
                 </span>
                 <div>
-                  <p className="text-sm text-gray-500">Email</p>
-                  <p className="text-gray-700">shubhamsutar5799@gmail.com</p>
+                  <p className="text-sm text-gray-500 dark:text-slate-400">Email</p>
+                  <p className="text-gray-700 dark:text-slate-200">shubhamsutar5799@gmail.com</p>
                 </div>
               </div>
               <div className="hidden items-center gap-4 bg-white p-4 shadow rounded-xl">
@@ -105,13 +105,13 @@ const Contact = () => {
                   <p className="text-gray-700">+91 98765 43210</p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 bg-white p-4 shadow rounded-xl">
+              <div className="flex items-center gap-4 bg-white p-4 shadow rounded-xl dark:bg-slate-800 dark:shadow-slate-950/40">
                 <span role="img" aria-label="Location" className="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
                   📍
                 </span>
                 <div>
-                  <p className="text-sm text-gray-500">Location</p>
-                  <p className="text-gray-700">Pune, Maharashtra, India</p>
+                  <p className="text-sm text-gray-500 dark:text-slate-400">Location</p>
+                  <p className="text-gray-700 dark:text-slate-200">Pune, Maharashtra, India</p>
                 </div>
               </div>
             </div>
@@ -140,8 +140,8 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="bg-white shadow rounded-2xl p-6">
-            <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+          <div className="bg-white shadow rounded-2xl p-6 dark:bg-slate-800 dark:shadow-slate-950/40">
+            <h3 className="text-xl font-semibold mb-6 text-slate-900 dark:text-slate-100">Send a Message</h3>
             <form className="space-y-4" onSubmit={handleSave}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
@@ -150,7 +150,7 @@ const Contact = () => {
                   value={formData?.fullName || ""}
                   type="text"
                   placeholder="Your full name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none bg-white text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
                 />
                 <input
                   onChange={handleChange}
@@ -158,7 +158,7 @@ const Contact = () => {
                   value={formData?.email || ""}
                   type="email"
                   placeholder="your.email@example.com"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none bg-white text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
                 />
               </div>
               <input
@@ -167,7 +167,7 @@ const Contact = () => {
                 value={formData?.subject || ""}
                 type="text"
                 placeholder="What's this about?"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none bg-white text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
               />
               <textarea
                 onChange={handleChange}
@@ -175,7 +175,7 @@ const Contact = () => {
                 name="message"
                 placeholder="Tell me about your project or how I can help you..."
                 rows={5}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 outline-none bg-white text-slate-900 placeholder:text-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
               ></textarea>
 
               <button

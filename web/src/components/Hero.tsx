@@ -87,29 +87,29 @@ const Hero = () => {
   // }, []);
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-white to-purple-50 overflow-hidden px-4 md:px-0"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-50 via-white to-purple-50 overflow-hidden px-4 md:px-0 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
       id="home"
     >
       {/* Background gradient blur */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-purple-400 opacity-30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-[32rem] sm:h-[32rem] bg-pink-400 opacity-20 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-purple-400 opacity-30 rounded-full blur-3xl dark:opacity-20"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-[32rem] sm:h-[32rem] bg-pink-400 opacity-20 rounded-full blur-3xl dark:opacity-10"></div>
 
       <div className="max-w-6xl container mx-auto grid md:grid-cols-2 items-center gap-8 md:gap-12 relative z-10">
         {/* Left content */}
         <div className="text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-gray-900">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-slate-900 dark:text-slate-100">
             Hi, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
               I'm Shubham Sutar,
             </span>
           </h1>
-          <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl text-gray-600">
+          <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300">
             a Full Stack Web Developer with 5 years of experience building scalable and high-performance web applications.
           </h2>
-          <p className="mt-2 sm:mt-4 text-gray-500 max-w-md sm:max-w-lg mx-auto md:mx-0">
+          <p className="mt-2 sm:mt-4 text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
             I specialize in JavaScript, React.js, PHP, and Tailwind CSS, focusing on clean architecture and responsive design.
           </p>
-          <p className="text-gray-500 max-w-md sm:max-w-lg mx-auto md:mx-0">
+          <p className="text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
             Based in Pune, I’m passionate about turning ideas into efficient, user-friendly digital products.
           </p>
 
@@ -157,7 +157,7 @@ const Hero = () => {
                 <a
                   key={social.key}
                   href={href}
-                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md"
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md dark:bg-slate-800 dark:text-slate-100"
                   target="_blank"
                   rel="noreferrer"
                   aria-label={social.label}
@@ -173,7 +173,7 @@ const Hero = () => {
         {/* Right side card */}
         <div className="flex justify-center items-center mt-8 md:mt-0">
           <div className="relative">
-            <div className="rounded-3xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition w-48 h-48 sm:w-80 sm:h-80 md:w-96 md:h-96">
+            <div className="rounded-3xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition w-48 h-48 sm:w-80 sm:h-80 md:w-96 md:h-96 ring-1 ring-black/5 dark:ring-white/10">
               <img
                 src={hero_img}
                 alt="hero_img"

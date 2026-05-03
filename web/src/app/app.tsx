@@ -8,6 +8,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { useSkillsStore } from "../store/skillsStore";
 import { useEffect } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { DB_URL } from '../utils/constants';
 import dbData from '../data/db.json';
@@ -17,6 +18,12 @@ export function App() {
   const setSkillsData = useSkillsStore((state) => state.setSkillsData);
   const location = useLocation();
   const isTestRoute = location.pathname === '/test';
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored === "dark";
+    return window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? false;
+  });
 
   const fetchData = async () => {
     const res = await fetch(
@@ -36,9 +43,14 @@ export function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isTestRoute, setSkillsData]);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkMode);
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
+
   return (
-    <div className="scroll-smooth">
-      <Header />
+    <div className="scroll-smooth bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+      <Header isDarkMode={isDarkMode} onToggleDarkMode={() => setIsDarkMode((prev) => !prev)} />
       <Hero />
       <Skills />
       <Projects />
