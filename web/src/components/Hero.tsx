@@ -76,6 +76,11 @@ const Hero = () => {
       icon: "fa-brands fa-gitlab text-orange-600",
       label: "GitLab",
     },
+    {
+      key: "streamlitURL",
+      icon: "fa-brands fa-streamlit text-blue-500",
+      label: "Streamlit",
+    },
   ] as const;
   // const { data: urlData, callApi: getURLs }: any = useApi();
 
