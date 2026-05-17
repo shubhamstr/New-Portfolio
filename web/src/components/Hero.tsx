@@ -78,7 +78,8 @@ const Hero = () => {
     },
     {
       key: "streamlitURL",
-      icon: "fa-brands fa-streamlit text-blue-500",
+      icon: "fa-solid fa-gear text-blue-500",
+      // icon: "fa-brands fa-streamlit text-blue-500",
       label: "Streamlit",
     },
   ] as const;
