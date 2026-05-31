@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ui": "set NX_CLOUD=false && nx serve web",
+    "ui": "nx serve web",
     "build": "nx build web",
     "test": "nx test web"
   },

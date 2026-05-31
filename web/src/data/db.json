@@ -37,19 +37,19 @@
         "visible": true
       },
       {
-        "name": "jQuery",
-        "level": 80,
-        "visible": false
-      },
-      {
         "name": "React Native (Android)",
         "level": 60,
         "visible": true
       },
       {
+        "name": "jQuery",
+        "level": 80,
+        "visible": false
+      },
+      {
         "name": "Angular",
         "level": 20,
-        "visible": true
+        "visible": false
       }
     ],
     "backend": [
@@ -61,6 +61,16 @@
       {
         "name": "Express.js",
         "level": 90,
+        "visible": true
+      },
+      {
+        "name": "REST APIs",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "Socket.IO",
+        "level": 70,
         "visible": true
       },
       {
@@ -82,21 +92,6 @@
         "name": "Python",
         "level": 20,
         "visible": true
-      },
-      {
-        "name": "SQL",
-        "level": 80,
-        "visible": true
-      },
-      {
-        "name": "NoSQL",
-        "level": 70,
-        "visible": true
-      },
-      {
-        "name": "Postman",
-        "level": 60,
-        "visible": true
       }
     ],
     "database": [
@@ -111,13 +106,20 @@
         "visible": true
       },
       {
-        "name": "Docker",
-        "level": 70,
+        "name": "SQL",
+        "level": 80,
         "visible": true
       },
       {
-        "name": "Git",
-        "level": 90,
+        "name": "NoSQL",
+        "level": 70,
+        "visible": true
+      }
+    ],
+    "tools": [
+      {
+        "name": "Docker",
+        "level": 70,
         "visible": true
       },
       {
@@ -128,6 +130,11 @@
       {
         "name": "Jira",
         "level": 70,
+        "visible": true
+      },
+      {
+        "name": "Git",
+        "level": 90,
         "visible": true
       },
       {
@@ -143,21 +150,96 @@
       {
         "name": "GitLab",
         "level": 50,
+        "visible": false
+      },
+      {
+        "name": "Postman",
+        "level": 60,
         "visible": true
       }
     ],
-    "other": [
-      "AWS",
-      "GCP",
-      "Microsoft Azure",
-      "npm",
-      "yarn",
-      "composer",
-      "FileZilla",
-      "MongoDB Compass",
-      "PHPMyAdmin",
+    "concepts": [
+      {
+        "name": "MERN Stack",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "Agile/Scrum",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "CI/CD",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Object Oriented Programming (OOP)",
+        "level": 60,
+        "visible": true
+      }
+    ],
+    "cloud": [
+      {
+        "name": "AWS EC2",
+        "level": 90,
+        "visible": true
+      },
+      {
+        "name": "AWS S3",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "AWS RDS",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "AWS ECR",
+        "level": 60,
+        "visible": true
+      },
+      {
+        "name": "GCP Cloud Run",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "GCP Cloud Storage",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "GCP Artifact Registry",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Azure Conatainer Registry",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Azure Blob Storage",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Azure Virtual Machines",
+        "level": 70,
+        "visible": true
+      }
+    ],
+    "others": [
       "VS Code",
-      "Android Studio"
+      "Antigravity",
+      "NPM",
+      "Yarn",
+      "Composer",
+      "Linux",
+      "Windows"
     ]
   },
   "URLs": {
@@ -254,6 +336,20 @@
         "https://github.com/shubhamstr/Trendsquad-Admin"
       ],
       "type": "others"
+    },
+    {
+      "title": "Bitbucket PR Review Tool",
+      "description": "Automated pull request analysis and review comments powered by Google Gemini AI.",
+      "image": "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
+      "techStacks": [
+        "Node.js",
+        "Bitbucket",
+        "Docker",
+        "Gemini AI"
+      ],
+      "demoLink": "https://hub.docker.com/r/shubhamstr/gemini-pr-reviewer",
+      "githubLink": "https://bitbucket.org/shubhamstr/bitbucket-pr-review-tool",
+      "type": "tools"
     },
     {
       "title": "Boilerplate Generator",
