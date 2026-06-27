@@ -110,9 +110,10 @@ const Hero = () => {
             </span>
           </h1>
           <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300">
-            I'm a Full Stack Developer with 5+ years of experience specializing in React.js, Node.js, Express.js, and MongoDB. I build fast, scalable, and user-centric web applications using modern technologies like JavaScript, TypeScript, Next.js, Docker, and CI/CD pipelines.
+            A Full Stack Developer with 5+ years of experience specializing in React.js, Node.js, Express.js, and MongoDB.
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
+          <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
+            I build fast, scalable, and user-centric web applications using modern technologies like JavaScript, TypeScript, Next.js, Docker, and CI/CD pipelines.
             I'm passionate about clean code, performance optimization, and turning ideas into impactful digital products.
           </p>
 
