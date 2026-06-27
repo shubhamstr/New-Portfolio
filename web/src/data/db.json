@@ -273,7 +273,7 @@
         "WebSocket",
         "Express.js"
       ],
-      "demoLink": "https://realtime-socket-chat-app.netlify.app/login",
+      "demoLink": "http://161.118.189.125:3000",
       "githubLink": "https://github.com/shubhamstr/Realtime-Chat-App",
       "type": "featured"
     },
