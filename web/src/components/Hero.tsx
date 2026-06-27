@@ -110,13 +110,10 @@ const Hero = () => {
             </span>
           </h1>
           <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300">
-            a Full Stack Web Developer with 5 years of experience building scalable and high-performance web applications.
+            I'm a Full Stack Developer with 5+ years of experience specializing in React.js, Node.js, Express.js, and MongoDB. I build fast, scalable, and user-centric web applications using modern technologies like JavaScript, TypeScript, Next.js, Docker, and CI/CD pipelines.
           </h2>
-          <p className="mt-2 sm:mt-4 text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
-            I specialize in JavaScript, React.js, PHP, and Tailwind CSS, focusing on clean architecture and responsive design.
-          </p>
           <p className="text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
-            Based in Pune, I’m passionate about turning ideas into efficient, user-friendly digital products.
+            I'm passionate about clean code, performance optimization, and turning ideas into impactful digital products.
           </p>
 
           {/* Buttons */}
@@ -163,7 +160,7 @@ const Hero = () => {
                 <a
                   key={social.key}
                   href={href}
-                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md dark:bg-slate-800 dark:text-slate-100"
+                  className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white shadow hover:shadow-md dark:bg-slate-800 dark:text-slate-100"
                   target="_blank"
                   rel="noreferrer"
                   aria-label={social.label}
