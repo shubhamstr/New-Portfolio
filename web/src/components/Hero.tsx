@@ -1,20 +1,20 @@
 // import { useEffect } from "react";
 // import { useApi } from "../hooks/useApi";
-import hero_img from '../assets/hero_img.png'
-import { useSkillsStore } from "../store/skillsStore";
+import hero_img from '../assets/hero_img.png';
+import { useSkillsStore } from '../store/skillsStore';
 
 const Hero = () => {
   const skillsData = useSkillsStore((state) => state.skillsData);
   const socialLinks = [
     {
-      key: "githubURL",
-      icon: "fa-brands fa-github text-gray-700",
-      label: "GitHub",
+      key: 'githubURL',
+      icon: 'fa-brands fa-github text-gray-700',
+      label: 'GitHub',
     },
     {
-      key: "linkedInURL",
-      icon: "fa-brands fa-linkedin text-blue-600",
-      label: "LinkedIn",
+      key: 'linkedInURL',
+      icon: 'fa-brands fa-linkedin text-blue-600',
+      label: 'LinkedIn',
     },
     // {
     //   key: "twitterURL",
@@ -22,65 +22,65 @@ const Hero = () => {
     //   label: "Twitter",
     // },
     {
-      key: "codepenURL",
-      icon: "fa-solid fa-code text-purple-600",
-      label: "CodePen",
+      key: 'codepenURL',
+      icon: 'fa-solid fa-code text-purple-600',
+      label: 'CodePen',
     },
     {
-      key: "stackOverFlowURL",
-      icon: "fa-brands fa-stack-overflow text-orange-500",
-      label: "Stack Overflow",
+      key: 'stackOverFlowURL',
+      icon: 'fa-brands fa-stack-overflow text-orange-500',
+      label: 'Stack Overflow',
     },
     {
-      key: "mediumURL",
-      icon: "fa-brands fa-medium text-gray-900",
-      label: "Medium",
+      key: 'mediumURL',
+      icon: 'fa-brands fa-medium text-gray-900',
+      label: 'Medium',
     },
     {
-      key: "freeCodeCampURL",
-      icon: "fa-brands fa-free-code-camp text-green-600",
-      label: "freeCodeCamp",
+      key: 'freeCodeCampURL',
+      icon: 'fa-brands fa-free-code-camp text-green-600',
+      label: 'freeCodeCamp',
     },
     {
-      key: "devToURL",
-      icon: "fa-brands fa-dev text-gray-800",
-      label: "DEV",
+      key: 'devToURL',
+      icon: 'fa-brands fa-dev text-gray-800',
+      label: 'DEV',
     },
     {
-      key: "leetcodeURL",
-      icon: "fa-solid fa-code text-yellow-600",
-      label: "LeetCode",
+      key: 'leetcodeURL',
+      icon: 'fa-solid fa-code text-yellow-600',
+      label: 'LeetCode',
     },
     {
-      key: "dockerURL",
-      icon: "fa-brands fa-docker text-sky-600",
-      label: "Docker Hub",
+      key: 'dockerURL',
+      icon: 'fa-brands fa-docker text-sky-600',
+      label: 'Docker Hub',
     },
     {
-      key: "hackerEarthURL",
-      icon: "fa-solid fa-laptop-code text-indigo-600",
-      label: "HackerEarth",
+      key: 'hackerEarthURL',
+      icon: 'fa-solid fa-laptop-code text-indigo-600',
+      label: 'HackerEarth',
     },
     {
-      key: "hackerRankURL",
-      icon: "fa-brands fa-hackerrank text-green-700",
-      label: "HackerRank",
+      key: 'hackerRankURL',
+      icon: 'fa-brands fa-hackerrank text-green-700',
+      label: 'HackerRank',
     },
     {
-      key: "bitbucketURL",
-      icon: "fa-brands fa-bitbucket text-blue-700",
-      label: "Bitbucket",
+      key: 'bitbucketURL',
+      icon: 'fa-brands fa-bitbucket text-blue-700',
+      label: 'Bitbucket',
     },
     {
-      key: "gitlabURL",
-      icon: "fa-brands fa-gitlab text-orange-600",
-      label: "GitLab",
+      key: 'gitlabURL',
+      icon: 'fa-brands fa-gitlab text-orange-600',
+      label: 'GitLab',
     },
     {
-      key: "streamlitURL",
-      icon: "fa-solid fa-gear text-blue-500",
+      key: 'streamlitURL',
+      icon: 'fa-solid fa-gear text-blue-500',
       // icon: "fa-brands fa-streamlit text-blue-500",
-      label: "Streamlit",
+      label: 'Streamlit',
     },
   ] as const;
   // const { data: urlData, callApi: getURLs }: any = useApi();
@@ -110,11 +110,15 @@ const Hero = () => {
             </span>
           </h1>
           <h2 className="mt-2 sm:mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300">
-            A Full Stack Developer with 5+ years of experience specializing in React.js, Node.js, Express.js, and MongoDB.
+            A Full Stack Developer with 5+ years of experience specializing in
+            React.js, Node.js, Express.js, and MongoDB.
           </h2>
           <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
-            I build fast, scalable, and user-centric web applications using modern technologies like JavaScript, TypeScript, Next.js, Docker, and CI/CD pipelines.
-            I'm passionate about clean code, performance optimization, and turning ideas into impactful digital products.
+            I build fast, scalable, and user-centric web applications using
+            modern technologies like JavaScript, TypeScript, Next.js, Python,
+            Docker, and CI/CD pipelines. I'm passionate about clean code,
+            performance optimization, and turning ideas into impactful digital
+            products.
           </p>
 
           {/* Buttons */}
@@ -190,8 +194,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
+  );
+};
 
-  )
-}
-
-export default Hero
+export default Hero;
