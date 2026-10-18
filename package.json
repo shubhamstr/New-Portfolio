@@ -61,12 +61,10 @@
     "webpack-cli": "^5.1.4"
   },
   "workspaces": [
-    "packages/*",
     "web"
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
-    "axios": "^1.11.0",
     "dotenv": "^17.4.2",
     "firebase": "^12.12.1",
     "react": "19.0.0",

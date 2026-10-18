@@ -7,13 +7,6 @@ on:
         description: "Docker image version (example: v1.0.0)"
         required: true
         type: string
-      type:
-        description: "Select project type (web/api)"
-        required: true
-        type: choice
-        options:
-          - web
-          - api
 
 jobs:
   build:
@@ -30,30 +23,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Determine Dockerfile + image name
-      - name: Set variables
-        id: vars
-        run: |
-          if [ "${{ github.event.inputs.type }}" = "web" ]; then
-            echo "DOCKERFILE=Dockerfile.web" >> $GITHUB_OUTPUT
-            echo "IMAGE_NAME=portfolio-web" >> $GITHUB_OUTPUT
-          else
-            echo "DOCKERFILE=Dockerfile.api" >> $GITHUB_OUTPUT
-            echo "IMAGE_NAME=portfolio-api" >> $GITHUB_OUTPUT
-          fi
-
       # Build Docker Image
       - name: Build Docker Image
         run: |
           docker build \
-            -f ${{ steps.vars.outputs.DOCKERFILE }} \
-            -t ${{ secrets.DOCKERHUB_USER }}/${{ steps.vars.outputs.IMAGE_NAME }}:${{ github.event.inputs.version }} \
+            -f Dockerfile.web \
+            -t ${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }} \
             .
 
       # Push Docker Image
       - name: Push Version Tag
         run: |
-          docker push ${{ secrets.DOCKERHUB_USER }}/${{ steps.vars.outputs.IMAGE_NAME }}:${{ github.event.inputs.version }}
+          docker push ${{ secrets.DOCKERHUB_USER }}/portfolio-web:${{ github.event.inputs.version }}
 
       # Deploy to EC2
       - name: Deploy to EC2 (Pull + Restart Container)
@@ -63,18 +44,9 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            TYPE="${{ github.event.inputs.type }}"
             VERSION="${{ github.event.inputs.version }}"
-
-            if [ "$TYPE" = "web" ]; then
-              CONTAINER_NAME="portfolio-web"
-              IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-web:$VERSION"
-              PORT="-p 3000:80"
-            else
-              CONTAINER_NAME="portfolio-api"
-              IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-api:$VERSION"
-              PORT="-p 5000:5000"
-            fi
+            CONTAINER_NAME="portfolio-web"
+            IMAGE="${{ secrets.DOCKERHUB_USER }}/portfolio-web:$VERSION"
 
             echo "Logging in to Docker..."
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login -u "${{ secrets.DOCKERHUB_USER }}" --password-stdin
@@ -95,7 +67,7 @@ jobs:
             echo "Starting new container..."
             sudo docker run -d \
               --name $CONTAINER_NAME \
-              $PORT \
+              -p 3000:80 \
               --restart always \
               $IMAGE
 
