@@ -156,6 +156,41 @@
         "name": "Postman",
         "level": 60,
         "visible": true
+      },
+      {
+        "name": "VS Code",
+        "level": 85,
+        "visible": true
+      },
+      {
+        "name": "Antigravity",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "NPM",
+        "level": 80,
+        "visible": true
+      },
+      {
+        "name": "Yarn",
+        "level": 75,
+        "visible": true
+      },
+      {
+        "name": "Composer",
+        "level": 70,
+        "visible": true
+      },
+      {
+        "name": "Linux",
+        "level": 75,
+        "visible": true
+      },
+      {
+        "name": "Windows",
+        "level": 85,
+        "visible": true
       }
     ],
     "concepts": [
@@ -231,15 +266,6 @@
         "level": 70,
         "visible": true
       }
-    ],
-    "others": [
-      "VS Code",
-      "Antigravity",
-      "NPM",
-      "Yarn",
-      "Composer",
-      "Linux",
-      "Windows"
     ]
   },
   "URLs": {

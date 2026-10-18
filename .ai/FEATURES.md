@@ -68,12 +68,12 @@ All features are implemented in the `web/` Nx project under `web/src/`.
 
 **Status**: ✅ Implemented
 
-**Implementation**:
-- 6 category cards (Frontend, Backend, Database, Tools, Concepts, Cloud) + "Other Technologies" pill tags
-- Each category maps over its array from `skillsData.skills`
-- Progress bar width: `style={{ width: \`${skill.level}%\` }}`
-- Items with `visible: false` get `className="hidden"` (still in DOM)
-- "Other Technologies" (`skills.others`) rendered as flat pill tags (no level/visibility)
+- Responsive 2-column grid layout of 6 balanced horizontal category cards (Frontend, Backend, Database, Tools & Workflow, Architecture & Concepts, and Cloud & Infrastructure)
+- Horizontal card structure featuring category metadata (icon, title, technology count) on the left and compact interactive skill chips on the right
+- "Other Tools & Tech" (`skills.others`) combined directly into the "Tools & Workflow" category card alongside workflow tools
+- Visual proficiency level legend (`Advanced`, `Proficient`, `Familiar`) with colored dot indicators matching the compact skill chips
+- Informative tooltips on hover displaying skill name, proficiency category, and percentage
+- Items with `visible: false` retain `className="hidden"` (still in DOM)
 
 **Files**: `web/src/components/Skills.tsx`
 

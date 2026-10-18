@@ -34,15 +34,14 @@ The file is the single source of truth for all displayable portfolio content.
     "database":  [ { "name": string, "level": number, "visible": boolean } ],
     "tools":     [ { "name": string, "level": number, "visible": boolean } ],
     "concepts":  [ { "name": string, "level": number, "visible": boolean } ],
-    "cloud":     [ { "name": string, "level": number, "visible": boolean } ],
-    "others":    [ string ]   ← flat array, no level/visible fields
+    "cloud":     [ { "name": string, "level": number, "visible": boolean } ]
   }
 }
 ```
 
-- `level`: integer 0–100, used as CSS `width` percentage for skill progress bars
+- `level`: integer 0–100, determines proficiency classification (Advanced: 80%+, Proficient: 65–79%, Familiar: <65%)
 - `visible`: boolean — items with `visible: false` are rendered with `class="hidden"` (DOM is present but not shown)
-- `others`: plain string array, rendered as pill tags (no level/visibility fields)
+- `tools`: contains all developer workflow, build, container, and editor tooling (migrated from legacy `others` array)
 
 ### `URLs` Object
 
