@@ -1,14 +1,17 @@
-Before implementing this feature, read all relevant files inside .ai/.
-Treat the .ai/ documentation as project context, but always verify important information against the actual source code.
+Before implementing this feature, read all relevant files inside `.ai/`.
 
-# Feature Request
+Treat the `.ai/` documentation as project context, but always verify important information against the actual source code.
+
+## Feature Request
 
 [DESCRIBE THE NEW FEATURE HERE]
 
-# Instructions
+## Instructions
 
 First analyze the existing implementation and determine how this feature should fit into the current architecture.
+
 Do NOT immediately write code.
+
 First provide:
 
 1. Feature understanding
@@ -25,6 +28,7 @@ First provide:
 12. Files that will be created/modified
 
 Then create an implementation plan.
+
 Wait for approval before making code changes.
 
 After approval:
@@ -52,4 +56,4 @@ Finally provide:
 - Tests performed
 - Commands executed
 - Known limitations
-- Any .ai/ documentation that should be updated
+- Any `.ai/` documentation that should be updated
