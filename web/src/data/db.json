@@ -59,6 +59,11 @@
         "visible": true
       },
       {
+        "name": "Python",
+        "level": 40,
+        "visible": true
+      },
+      {
         "name": "Express.js",
         "level": 90,
         "visible": true
@@ -86,11 +91,6 @@
       {
         "name": "CodeIgniter",
         "level": 50,
-        "visible": true
-      },
-      {
-        "name": "Python",
-        "level": 20,
         "visible": true
       }
     ],
@@ -307,10 +307,7 @@
       "title": "Task Management App",
       "description": "A task management application designed to help users organize and track their daily work efficiently. Supports task creation, prioritization, and status tracking with an intuitive interface. Improves productivity by providing a clear overview of progress and pending tasks.",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": [
-        "React.js",
-        "PHP"
-      ],
+      "techStacks": ["React.js", "PHP"],
       "demoLink": "",
       "githubLink": "https://github.com/shubhamstr/Task-Management-System",
       "inProgress": true,
@@ -320,13 +317,7 @@
       "title": "E-Commerce Platform",
       "description": "A full-stack e-commerce platform built with React.js, Node.js, and MongoDB, featuring secure user authentication, seamless payment integration, and a powerful admin dashboard for product and order management.",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": [
-        "React.js",
-        "Next.js",
-        "Node.js",
-        "Express.js",
-        "MySQL"
-      ],
+      "techStacks": ["React.js", "Next.js", "Node.js", "Express.js", "MySQL"],
       "demoLink": "",
       "githubLink": [
         "https://github.com/shubhamstr/E-Commerce-Platform-Website",
@@ -340,10 +331,7 @@
       "title": "V-Arts",
       "description": "A curated online store for handmade art and crafts, offering custom keychains, paintings, and wooden creations, with a clean shopping experience and easy browsing for unique, creative products.",
       "image": "https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "PHP",
-        "Laravel"
-      ],
+      "techStacks": ["PHP", "Laravel"],
       "demoLink": "",
       "githubLink": "https://github.com/shubhamstr/varts",
       "inProgress": true,
@@ -353,9 +341,7 @@
       "title": "Blog Platform",
       "description": "A modern blog platform with a built-in content management system, SEO optimization features, and social media integration, enabling users to create, manage, and share engaging content effortlessly.",
       "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-      "techStacks": [
-        "PHP"
-      ],
+      "techStacks": ["PHP"],
       "demoLink": "",
       "githubLink": [
         "https://github.com/shubhamstr/Trendsquad-Web",
@@ -367,11 +353,7 @@
       "title": "ChatGPT Vault",
       "description": "A simple way to save, organize, and quickly access your most important ChatGPT content.",
       "image": "https://images.unsplash.com/photo-1675865254433-6ba341f0f00b?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "React.js",
-        "TypeScript",
-        "ChatGPT"
-      ],
+      "techStacks": ["React.js", "TypeScript", "ChatGPT"],
       "demoLink": "https://chromewebstore.google.com/detail/chatgpt-vault/ncnaomcidbflhinafcnclklcilmidmhf?utm_source=item-share-cb",
       "githubLink": "https://github.com/shubhamstr/Chat-GPT-Vault",
       "type": "tools"
@@ -380,12 +362,7 @@
       "title": "Bitbucket PR Review Tool",
       "description": "Automated pull request analysis and review comments powered by Google Gemini AI.",
       "image": "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "Node.js",
-        "Bitbucket",
-        "Docker",
-        "Gemini AI"
-      ],
+      "techStacks": ["Node.js", "Bitbucket", "Docker", "Gemini AI"],
       "demoLink": "https://hub.docker.com/r/shubhamstr/gemini-pr-reviewer",
       "githubLink": "https://bitbucket.org/shubhamstr/bitbucket-pr-review-tool",
       "type": "tools"
@@ -394,10 +371,7 @@
       "title": "Boilerplate Generator",
       "description": "A boilerplate generator that streamlines project initialization by providing ready-to-use templates, helping developers kickstart applications with best practices and minimal setup.",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "Node.js",
-        "Express.js"
-      ],
+      "techStacks": ["Node.js", "Express.js"],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/boilerplate-generator",
       "githubLink": "https://github.com/shubhamstr/boilerplate-generator",
       "type": "tools"
@@ -406,9 +380,7 @@
       "title": "Form Builder",
       "description": "A powerful form builder npm package for creating dynamic, schema-driven forms with built-in validation, reusable components, and seamless integration into modern web applications.",
       "image": "https://plus.unsplash.com/premium_photo-1681487870238-4a2dfddc6bcb?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "React.js"
-      ],
+      "techStacks": ["React.js"],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/form-builder",
       "githubLink": "https://github.com/shubhamstr/form-builder",
       "type": "tools"
@@ -417,9 +389,7 @@
       "title": "Project Rules Checker",
       "description": "A rule-checking tool designed to validate project structure, configurations, and coding standards, ensuring consistency and reducing errors during development.",
       "image": "https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "React.js"
-      ],
+      "techStacks": ["React.js"],
       "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-rules-checker",
       "githubLink": "https://github.com/shubhamstr/project-rules-checker",
       "type": "tools"
@@ -428,9 +398,7 @@
       "title": "Project Companion",
       "description": "A lightweight VS Code extension for adding line-based notes and contextual comments, helping developers document thoughts, track tasks, and improve code readability.",
       "image": "https://plus.unsplash.com/premium_photo-1720287601300-cf423c3d6760?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": [
-        "React.js"
-      ],
+      "techStacks": ["React.js"],
       "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-companion",
       "githubLink": "https://github.com/shubhamstr/project-companion",
       "type": "tools"
