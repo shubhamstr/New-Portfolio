@@ -97,7 +97,7 @@ const OtherProjects = () => {
                   {Array.isArray(project.githubLink) && project.githubLink.length > 0 ? (
                     <div className="relative inline-block group">
                       <button className="flex items-center gap-1 text-gray-700 dark:text-slate-200">
-                        💻 Code ▾
+                        💻 Repo ▾
                       </button>
 
                       <div className="absolute bottom-6 mt-1 z-10 min-w-[120px] bg-white shadow-md rounded border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 dark:bg-slate-900 dark:border-slate-700 dark:shadow-slate-950/40">
@@ -109,7 +109,7 @@ const OtherProjects = () => {
                             rel="noopener noreferrer"
                             className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-slate-200 dark:hover:bg-slate-800"
                           >
-                            Code {index + 1}
+                            Repo {index + 1}
                           </a>
                         ))}
                       </div>
@@ -121,7 +121,7 @@ const OtherProjects = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-gray-700 hover:underline dark:text-slate-200"
                     >
-                      💻 Code
+                      💻 Repo
                     </a>
                   )}
                 </div>

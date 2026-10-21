@@ -16,9 +16,8 @@ const Tools = () => {
             skillsData.projects.map((project: any) => (
               <div
                 key={project.title}
-                className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border border-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:shadow-slate-950/40 ${
-                  project.type === "tools" ? "" : "hidden"
-                }`}
+                className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border border-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:shadow-slate-950/40 ${project.type === "tools" ? "" : "hidden"
+                  }`}
               >
                 <img
                   src={project.image}
@@ -60,7 +59,7 @@ const Tools = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-gray-700 hover:underline dark:text-slate-200"
                     >
-                      Code
+                      Repo
                     </a>
                   </div>
                 </div>

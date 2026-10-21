@@ -69,7 +69,7 @@ const Projects = () => {
                       project.techStacks.map((t: any) => (
                         <span
                           key={t}
-                            className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-slate-700 dark:text-slate-200"
+                          className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700 dark:bg-slate-700 dark:text-slate-200"
                         >
                           {t}
                         </span>
@@ -84,8 +84,8 @@ const Projects = () => {
                       rel={project.demoLink ? "noopener noreferrer" : undefined}
                       onClick={(e) => !project.demoLink && e.preventDefault()}
                       className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm transition ${project.demoLink
-                          ? "bg-purple-600 text-white hover:bg-purple-700"
-                          : "cursor-not-allowed bg-gray-300 text-gray-500 dark:bg-slate-700 dark:text-slate-400"
+                        ? "bg-purple-600 text-white hover:bg-purple-700"
+                        : "cursor-not-allowed bg-gray-300 text-gray-500 dark:bg-slate-700 dark:text-slate-400"
                         }`}
                     >
                       Live Demo
@@ -96,7 +96,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm transition hover:bg-gray-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
                     >
-                      Code
+                      Repo
                     </a>
                   </div>
                 </div>
