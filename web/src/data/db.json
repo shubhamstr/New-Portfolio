@@ -299,7 +299,7 @@
         "WebSocket",
         "Express.js"
       ],
-      "demoLink": "http://161.118.189.125:3000",
+      "demoLink": "https://realtime-chat.codeguest.in/login",
       "githubLink": "https://github.com/shubhamstr/Realtime-Chat-App",
       "type": "featured"
     },
@@ -311,21 +311,21 @@
       "demoLink": "",
       "githubLink": "https://github.com/shubhamstr/Task-Management-System",
       "inProgress": true,
-      "type": "featured"
+      "type": "others"
     },
     {
       "title": "E-Commerce Platform",
       "description": "A full-stack e-commerce platform built with React.js, Node.js, and MongoDB, featuring secure user authentication, seamless payment integration, and a powerful admin dashboard for product and order management.",
       "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       "techStacks": ["React.js", "Next.js", "Node.js", "Express.js", "MySQL"],
-      "demoLink": "",
+      "demoLink": "https://ecom.codeguest.in/",
       "githubLink": [
         "https://github.com/shubhamstr/E-Commerce-Platform-Website",
         "https://github.com/shubhamstr/E-Commerce-Platform-Admin",
         "https://github.com/shubhamstr/E-Commerce-Platform-API"
       ],
-      "inProgress": true,
-      "type": "others"
+      "inProgress": false,
+      "type": "featured"
     },
     {
       "title": "V-Arts",
@@ -338,7 +338,7 @@
       "type": "others"
     },
     {
-      "title": "Blog Platform",
+      "title": "Blog Platform (Trendsquad)",
       "description": "A modern blog platform with a built-in content management system, SEO optimization features, and social media integration, enabling users to create, manage, and share engaging content effortlessly.",
       "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
       "techStacks": ["PHP"],
@@ -350,21 +350,21 @@
       "type": "others"
     },
     {
-      "title": "ChatGPT Vault",
-      "description": "A simple way to save, organize, and quickly access your most important ChatGPT content.",
-      "image": "https://images.unsplash.com/photo-1675865254433-6ba341f0f00b?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
-      "techStacks": ["React.js", "TypeScript", "ChatGPT"],
-      "demoLink": "https://chromewebstore.google.com/detail/chatgpt-vault/ncnaomcidbflhinafcnclklcilmidmhf?utm_source=item-share-cb",
-      "githubLink": "https://github.com/shubhamstr/Chat-GPT-Vault",
-      "type": "tools"
-    },
-    {
       "title": "Bitbucket PR Review Tool",
       "description": "Automated pull request analysis and review comments powered by Google Gemini AI.",
       "image": "https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
       "techStacks": ["Node.js", "Bitbucket", "Docker", "Gemini AI"],
       "demoLink": "https://hub.docker.com/r/shubhamstr/gemini-pr-reviewer",
       "githubLink": "https://bitbucket.org/shubhamstr/bitbucket-pr-review-tool",
+      "type": "tools"
+    },
+    {
+      "title": "ChatGPT Vault",
+      "description": "A simple way to save, organize, and quickly access your most important ChatGPT content.",
+      "image": "https://images.unsplash.com/photo-1675865254433-6ba341f0f00b?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
+      "techStacks": ["React.js", "TypeScript", "ChatGPT"],
+      "demoLink": "https://chromewebstore.google.com/detail/chatgpt-vault/ncnaomcidbflhinafcnclklcilmidmhf?utm_source=item-share-cb",
+      "githubLink": "https://github.com/shubhamstr/Chat-GPT-Vault",
       "type": "tools"
     },
     {

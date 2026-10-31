@@ -90,14 +90,39 @@ const Projects = () => {
                     >
                       Live Demo
                     </a>
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm transition hover:bg-gray-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
-                    >
-                      Repo
-                    </a>
+                    {Array.isArray(project.githubLink) && project.githubLink.length > 0 ? (
+                      <div className="relative inline-block group">
+                        <button
+                          type="button"
+                          className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm transition hover:bg-gray-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
+                        >
+                          Repo ▾
+                        </button>
+
+                        <div className="absolute bottom-full mb-1 left-0 z-10 min-w-[120px] bg-white shadow-md rounded-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 dark:bg-slate-900 dark:border-slate-700 dark:shadow-slate-950/40 overflow-hidden before:absolute before:top-full before:left-0 before:right-0 before:h-2">
+                          {project.githubLink.map((link: any, index: any) => (
+                            <a
+                              key={index}
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                            >
+                              Repo {index + 1}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm transition hover:bg-gray-100 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700"
+                      >
+                        Repo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
