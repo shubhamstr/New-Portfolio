@@ -30,7 +30,7 @@ const Projects = () => {
             skillsData.projects.map((project: any) => (
               <div
                 key={project.title}
-                className={`bg-white shadow-lg rounded-2xl overflow-hidden text-left relative dark:bg-slate-800 dark:shadow-slate-950/40 ${project.type === "featured" ? "" : "hidden"
+                className={`bg-white shadow-lg rounded-2xl overflow-hidden text-left relative dark:bg-slate-800 dark:shadow-slate-950/40 ${project.type === "featured" && project.visible !== false ? "" : "hidden"
                   }`}
               >
                 <div className="relative">

@@ -115,7 +115,7 @@ const Hero = () => {
           </h2>
           <p className="mt-2 text-slate-500 dark:text-slate-400 max-w-md sm:max-w-lg mx-auto md:mx-0">
             I build fast, scalable, and user-centric web applications using
-            modern technologies like JavaScript, TypeScript, Next.js, Python,
+            modern technologies like JavaScript, TypeScript, Next.js, Python, PHP,
             Docker, and CI/CD pipelines. I'm passionate about clean code,
             performance optimization, and turning ideas into impactful digital
             products.

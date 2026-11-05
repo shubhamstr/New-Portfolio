@@ -252,7 +252,7 @@
         "visible": true
       },
       {
-        "name": "Azure Conatainer Registry",
+        "name": "Azure Container Registry",
         "level": 80,
         "visible": true
       },
@@ -301,7 +301,8 @@
       ],
       "demoLink": "https://realtime-chat.codeguest.in/login",
       "githubLink": "https://github.com/shubhamstr/Realtime-Chat-App",
-      "type": "featured"
+      "type": "featured",
+      "visible": true
     },
     {
       "title": "Task Management App",
@@ -311,7 +312,8 @@
       "demoLink": "",
       "githubLink": "https://github.com/shubhamstr/Task-Management-System",
       "inProgress": true,
-      "type": "others"
+      "type": "others",
+      "visible": false
     },
     {
       "title": "E-Commerce Platform",
@@ -325,7 +327,8 @@
         "https://github.com/shubhamstr/E-Commerce-Platform-API"
       ],
       "inProgress": false,
-      "type": "featured"
+      "type": "featured",
+      "visible": true
     },
     {
       "title": "V-Arts",
@@ -335,7 +338,8 @@
       "demoLink": "",
       "githubLink": "https://github.com/shubhamstr/varts",
       "inProgress": true,
-      "type": "others"
+      "type": "others",
+      "visible": true
     },
     {
       "title": "Blog Platform (Trendsquad)",
@@ -347,7 +351,8 @@
         "https://github.com/shubhamstr/Trendsquad-Web",
         "https://github.com/shubhamstr/Trendsquad-Admin"
       ],
-      "type": "others"
+      "type": "others",
+      "visible": true
     },
     {
       "title": "Bitbucket PR Review Tool",
@@ -356,7 +361,8 @@
       "techStacks": ["Node.js", "Bitbucket", "Docker", "Gemini AI"],
       "demoLink": "https://hub.docker.com/r/shubhamstr/gemini-pr-reviewer",
       "githubLink": "https://bitbucket.org/shubhamstr/bitbucket-pr-review-tool",
-      "type": "tools"
+      "type": "tools",
+      "visible": true
     },
     {
       "title": "ChatGPT Vault",
@@ -365,7 +371,8 @@
       "techStacks": ["React.js", "TypeScript", "ChatGPT"],
       "demoLink": "https://chromewebstore.google.com/detail/chatgpt-vault/ncnaomcidbflhinafcnclklcilmidmhf?utm_source=item-share-cb",
       "githubLink": "https://github.com/shubhamstr/Chat-GPT-Vault",
-      "type": "tools"
+      "type": "tools",
+      "visible": true
     },
     {
       "title": "Boilerplate Generator",
@@ -374,7 +381,8 @@
       "techStacks": ["Node.js", "Express.js"],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/boilerplate-generator",
       "githubLink": "https://github.com/shubhamstr/boilerplate-generator",
-      "type": "tools"
+      "type": "tools",
+      "visible": true
     },
     {
       "title": "Form Builder",
@@ -383,7 +391,8 @@
       "techStacks": ["React.js"],
       "demoLink": "https://www.npmjs.com/package/@shubhamstr/form-builder",
       "githubLink": "https://github.com/shubhamstr/form-builder",
-      "type": "tools"
+      "type": "tools",
+      "visible": true
     },
     {
       "title": "Project Rules Checker",
@@ -392,7 +401,8 @@
       "techStacks": ["React.js"],
       "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-rules-checker",
       "githubLink": "https://github.com/shubhamstr/project-rules-checker",
-      "type": "tools"
+      "type": "tools",
+      "visible": true
     },
     {
       "title": "Project Companion",
@@ -401,7 +411,8 @@
       "techStacks": ["React.js"],
       "demoLink": "https://marketplace.visualstudio.com/items?itemName=Shubhamstr.project-companion",
       "githubLink": "https://github.com/shubhamstr/project-companion",
-      "type": "tools"
+      "type": "tools",
+      "visible": true
     }
   ]
 }

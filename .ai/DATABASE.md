@@ -83,7 +83,8 @@ URLs are consumed by `Hero.tsx` (social icons) and `Tools.tsx` (GitHub link).
     "demoLink":    string | "",
     "githubLink":  string | string[],    ← can be array for multi-repo projects
     "inProgress":  boolean (optional),
-    "type":        "featured" | "others" | "tools"
+    "type":        "featured" | "others" | "tools",
+    "visible":     boolean               ← defaults to true; set false to hide without removing
   }
 ]
 ```

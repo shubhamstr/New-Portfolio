@@ -16,7 +16,7 @@ const Tools = () => {
             skillsData.projects.map((project: any) => (
               <div
                 key={project.title}
-                className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border border-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:shadow-slate-950/40 ${project.type === "tools" ? "" : "hidden"
+                className={`bg-white shadow-md rounded-2xl overflow-hidden text-left border border-slate-200 dark:bg-slate-800 dark:border-slate-700 dark:shadow-slate-950/40 ${project.type === "tools" && project.visible !== false ? "" : "hidden"
                   }`}
               >
                 <img
