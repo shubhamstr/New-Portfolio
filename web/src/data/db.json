@@ -289,6 +289,58 @@
   },
   "projects": [
     {
+      "title": "RAG Based AI Chatbot",
+      "description": "An AI-powered chatbot that allows users to upload PDF documents and interact with their content through natural language conversations. Implemented a complete Retrieval-Augmented Generation (RAG) pipeline, including document ingestion, text extraction, chunking, embedding generation, vector storage, semantic retrieval, and AI-powered response generation.",
+      "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=60&w=800&auto=format&fit=crop",
+      "techStacks": [
+        "Node.js",
+        "TypeScript",
+        "Express.js",
+        "LangChain",
+        "Qdrant",
+        "OpenAI API",
+        "RAG"
+      ],
+      "demoLink": "https://rag-ai-chatbot.codeguest.in/",
+      "githubLink": "https://github.com/shubhamstr/RAG-Based-AI-Chatbot",
+      "type": "featured",
+      "visible": true
+    },
+    {
+      "title": "Tool Calling AI Chatbot",
+      "description": "An AI-powered chatbot built with Python and Streamlit that uses tool calling to interact with external services. Integrated Tavily API for real-time web search and Resend API for email sending, enabling the AI assistant to perform actions dynamically while maintaining conversational memory.",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=60&w=800&auto=format&fit=crop",
+      "techStacks": [
+        "Python",
+        "Streamlit",
+        "OpenAI API",
+        "Tavily API",
+        "Resend API",
+        "Tool Calling"
+      ],
+      "demoLink": "https://tool-calling-ai-chatbotgit-pkkvroigaadxe47pnw3yis.streamlit.app/",
+      "githubLink": "https://github.com/shubhamstr/Tool-Calling-AI-Chatbot",
+      "type": "featured",
+      "visible": true
+    },
+    {
+      "title": "RTSP Stream Viewer",
+      "description": "A real-time RTSP stream viewer built using React.js, Node.js, TypeScript, and Socket.IO. Integrated MediaMTX and FFmpeg to process and relay video streams, enabling users to view live camera streams through a web-based interface with real-time streaming capabilities.",
+      "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=60&w=800&auto=format&fit=crop",
+      "techStacks": [
+        "React.js",
+        "Node.js",
+        "TypeScript",
+        "Socket.IO",
+        "MediaMTX",
+        "FFmpeg"
+      ],
+      "demoLink": "https://rtsp-stream-viewer.codeguest.in/",
+      "githubLink": "https://github.com/shubhamstr/RTSP-Stream-Viewer",
+      "type": "others",
+      "visible": true
+    },
+    {
       "title": "Realtime Chat App",
       "description": "A real-time chat application built with React.js, Node.js, and MongoDB, enabling instant messaging with WebSocket-based communication. Features include live message updates, message typing status, and scalable backend architecture for seamless real-time interactions.",
       "image": "https://plus.unsplash.com/premium_photo-1719839720683-72c8eb65b10a?q=60&w=800&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -301,7 +353,7 @@
       ],
       "demoLink": "https://realtime-chat.codeguest.in/login",
       "githubLink": "https://github.com/shubhamstr/Realtime-Chat-App",
-      "type": "featured",
+      "type": "others",
       "visible": true
     },
     {
@@ -327,7 +379,7 @@
         "https://github.com/shubhamstr/E-Commerce-Platform-API"
       ],
       "inProgress": false,
-      "type": "featured",
+      "type": "others",
       "visible": true
     },
     {
